@@ -1,6 +1,6 @@
 # 📚 flyscanner
 
-> 🏷️ **Inventário técnico do projeto**, gerado automaticamente em 03/11/2026 às 10:51 por *documentador.pyw* v1.0. Este arquivo é um retrato fiel dos arquivos analisados (sem interpretação por IA).
+> 🏷️ **Inventário técnico do projeto**, gerado automaticamente em 03/11/2026 às 11:09 por *documentador.pyw* v1.0. Este arquivo é um retrato fiel dos arquivos analisados (sem interpretação por IA).
 >
 > 🛡️ **Integridade da extração:** ✅ completa
 
@@ -24,24 +24,26 @@
 | Item | Valor |
 |---|---|
 | 📂 Raiz | `C:\Scripts\flyscanner` |
-| 🕒 Gerado em | 2026-11-03 10:51:37 |
-| 📁 Diretórios | 7 |
-| 📄 Arquivos encontrados | 41 |
-| 📝 Arquivos de texto incorporados | 26 |
-| 🧮 Linhas de texto | 8.963 |
-| 🖼️ Binários (somente metadados) | 15 |
-| ⏭️ Ignorados | 0 |
+| 🕒 Gerado em | 2026-11-03 11:09:47 |
+| 📁 Diretórios | 54 |
+| 📄 Arquivos encontrados | 102 |
+| 📝 Arquivos de texto incorporados | 52 |
+| 🧮 Linhas de texto | 9.936 |
+| 🖼️ Binários (somente metadados) | 49 |
+| ⏭️ Ignorados | 1 |
 | 🚫 Excluídos por regra | 1 |
 | 🔗 Links simbólicos | 0 |
 | ❌ Erros | 0 |
-| 💾 Tamanho do texto | 336.9 KB |
-| 🔑 SHA256 do conteúdo | `29be23e2a93109bd9bdf9dfc09060bf88d01d48339777e9f479e6d7878db8214` |
+| 💾 Tamanho do texto | 366.2 KB |
+| 🔑 SHA256 do conteúdo | `d30eb1427c9c1f8c53f8efc84152d2bf00e2a210c16c235f6cfa8cd4e470e1eb` |
 
 <a id="sec-tech"></a>
 
 ## 🧰 Tecnologias detectadas
 
-_Nenhum marcador de tecnologia conhecido foi detectado._
+| Tecnologia | Evidência |
+|---|---|
+| 🔀 Git | `.gitignore` |
 
 <a id="sec-langs"></a>
 
@@ -49,11 +51,12 @@ _Nenhum marcador de tecnologia conhecido foi detectado._
 
 | Linguagem | Arquivos | Linhas | Tamanho | Participação |
 |---|---:|---:|---:|---|
-| 🐍 Python | 17 | 5273 | 236.4 KB | `██████████████░░░░░░` 70.2% |
-| 📄 Texto | 2 | 2814 | 48.6 KB | `███░░░░░░░░░░░░░░░░░` 14.4% |
-| 📄 Outros | 1 | 187 | 28.3 KB | `██░░░░░░░░░░░░░░░░░░` 8.4% |
-| 📝 Markdown | 3 | 591 | 21.8 KB | `█░░░░░░░░░░░░░░░░░░░` 6.5% |
-| 🧾 JSON | 3 | 98 | 1.9 KB | `░░░░░░░░░░░░░░░░░░░░` 0.6% |
+| 🐍 Python | 17 | 5322 | 238.6 KB | `█████████████░░░░░░░` 65.1% |
+| 📄 Outros | 26 | 1086 | 55.0 KB | `███░░░░░░░░░░░░░░░░░` 15.0% |
+| 📄 Texto | 2 | 2814 | 48.6 KB | `███░░░░░░░░░░░░░░░░░` 13.3% |
+| 📝 Markdown | 3 | 591 | 21.8 KB | `█░░░░░░░░░░░░░░░░░░░` 6.0% |
+| 🧾 JSON | 3 | 98 | 1.9 KB | `░░░░░░░░░░░░░░░░░░░░` 0.5% |
+| 🔀 Git | 1 | 25 | 404 B | `░░░░░░░░░░░░░░░░░░░░` 0.1% |
 
 <a id="sec-tree"></a>
 
@@ -61,6 +64,112 @@ _Nenhum marcador de tecnologia conhecido foi detectado._
 
 ```text
 flyscanner/
+├── .git/
+│   ├── hooks/
+│   │   ├── applypatch-msg.sample
+│   │   ├── commit-msg.sample
+│   │   ├── fsmonitor-watchman.sample
+│   │   ├── post-update.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── pre-commit.sample
+│   │   ├── pre-merge-commit.sample
+│   │   ├── pre-push.sample
+│   │   ├── pre-rebase.sample
+│   │   ├── pre-receive.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   ├── push-to-checkout.sample
+│   │   ├── sendemail-validate.sample
+│   │   └── update.sample
+│   ├── info/
+│   │   └── exclude
+│   ├── logs/
+│   │   ├── refs/
+│   │   │   ├── heads/
+│   │   │   │   └── main
+│   │   │   └── remotes/
+│   │   │       └── origin/
+│   │   │           └── main
+│   │   └── HEAD
+│   ├── objects/
+│   │   ├── 02/
+│   │   │   └── c2a58090da1bcc7edda05bbed354cd4e2959fe
+│   │   ├── 0a/
+│   │   │   └── 21cadb7db0d5a0b6d525641c58adc983260e58
+│   │   ├── 15/
+│   │   │   └── f361958c53ce09aed9c6f63917ce96e5e1aabd
+│   │   ├── 26/
+│   │   │   └── 7184ae95e6d559acb11f4cd3b2e27a0275fd18
+│   │   ├── 34/
+│   │   │   └── 90333be399b1034574d8f42984af1370c1b0a2
+│   │   ├── 3c/
+│   │   │   └── b5ab6a4a922cdf86a82cd9f1f74baf436cad4f
+│   │   ├── 3d/
+│   │   │   └── 4f613f5ebf806773bdc2c250719fdf46cf6b08
+│   │   ├── 3e/
+│   │   │   └── e1babfd8b29475a4f04894ac5fb258a7919e12
+│   │   ├── 48/
+│   │   │   └── 08ab758e0ad4df48354f3f920aa9f615c819a3
+│   │   ├── 4a/
+│   │   │   └── eeb8b59d501eb6080ed23164da6be1e0079850
+│   │   ├── 4c/
+│   │   │   └── b59194d9990da0f832c6741a6ff84ecb7ac219
+│   │   ├── 4f/
+│   │   │   └── 2906b4e572fd76d207ed0a667539b34cc63611
+│   │   ├── 71/
+│   │   │   └── 01e22178f7038e1154467a94fc20b8e4d87bdd
+│   │   ├── 79/
+│   │   │   └── 85c21c3289843651cc22490b40ca745e415603
+│   │   ├── 86/
+│   │   │   ├── 175dcb48ee1954a58d9f14c2eae3acbdd36269
+│   │   │   ├── 6a9cb297c595d94cd771ef2938a2a260385ffb
+│   │   │   └── 95f65cb76456c198cb86201a8fdda1cac4e63e
+│   │   ├── 92/
+│   │   │   └── e006d60645684a7376aa0ded27fe185a5af8fc
+│   │   ├── 9b/
+│   │   │   └── ad42b8faf6b22b607983cf9b1ab7786b0471af
+│   │   ├── a0/
+│   │   │   └── 7c5b90093009e059e18ab5e49b34b15e7b53d9
+│   │   ├── a1/
+│   │   │   └── 13afef0488a9e43608c66f42ea94bbe596f482
+│   │   ├── a7/
+│   │   │   └── 00f8beea4e15ebe2af6cd99f1f6cd181afaf73
+│   │   ├── b3/
+│   │   │   ├── e05071d81501d67b3a780c907807b7801dfb95
+│   │   │   └── fd2e138a904ac1fc9c2561077ae06958a87abb
+│   │   ├── c2/
+│   │   │   └── 4fac19c1f670939c0ddec004b2db9cd1bd8642
+│   │   ├── c7/
+│   │   │   └── 35132f8a2b16c20041a96c481e069af2e5ac88
+│   │   ├── cf/
+│   │   │   └── 1f721644db5a90e5490ef86b95a81240c95c71
+│   │   ├── d2/
+│   │   │   └── 7a1862a680c4199a941d73d0b8c017d092d392
+│   │   ├── d4/
+│   │   │   └── f2040909ea94981a7dd4de75597fbb00f486d4
+│   │   ├── e0/
+│   │   │   └── 44a12d30164e2feb5e07e156a15496bd9eb6e9
+│   │   ├── e3/
+│   │   │   └── 6c5104418c79a8e480a47abf1042a6113d6392
+│   │   ├── e9/
+│   │   │   └── 9cc6f5dc2db7a489e31270a93ca5d9178dc16f
+│   │   ├── ec/
+│   │   │   └── 7bc51918ab31e5999fcb0959988af8656572bf
+│   │   ├── f4/
+│   │   │   └── 97e5a7ad10065df025ab639a8e39338099c354
+│   │   ├── info/
+│   │   └── pack/
+│   ├── refs/
+│   │   ├── heads/
+│   │   │   └── main
+│   │   ├── remotes/
+│   │   │   └── origin/
+│   │   │       └── main
+│   │   └── tags/
+│   ├── COMMIT_EDITMSG
+│   ├── config
+│   ├── description
+│   ├── HEAD
+│   └── index
 ├── __pycache__/
 │   ├── apis.cpython-314.pyc
 │   ├── buscador.cpython-314.pyc
@@ -99,11 +208,13 @@ flyscanner/
 ├── evolution-api/  [EXCLUÍDO AUTOMATICAMENTE: Pasta Massiva (> 1000 arq)]
 ├── log/
 │   └── flyscanner.log
+├── .gitignore
 ├── apis.py
 ├── buscador.py
 ├── condicoes.json
 ├── condicoes.py
 ├── config_apis.json
+├── DOCUMENTACAO_PROJETO.md  [SAÍDA GERADA PELA FERRAMENTA]
 ├── documentador.pyw  [ESTA FERRAMENTA]
 ├── historico.json
 ├── historico.py
@@ -111,7 +222,7 @@ flyscanner/
 ├── log.py
 └── ofertas.md
 
-7 diretórios, 41 arquivos
+54 diretórios, 102 arquivos
 ```
 
 <a id="sec-index"></a>
@@ -120,53 +231,1238 @@ flyscanner/
 
 | # | Tipo | Arquivo | Linguagem | Tamanho | Linhas | Situação |
 |--:|:-:|---|---|--:|--:|---|
-| 1 | 🖼️ | `__pycache__/apis.cpython-314.pyc` | Bytecode Python | 7.0 KB | - | 🖼️ Binário |
-| 2 | 🖼️ | `__pycache__/buscador.cpython-314.pyc` | Bytecode Python | 8.6 KB | - | 🖼️ Binário |
-| 3 | 🖼️ | `__pycache__/condicoes.cpython-314.pyc` | Bytecode Python | 7.6 KB | - | 🖼️ Binário |
-| 4 | 🖼️ | `__pycache__/historico.cpython-314.pyc` | Bytecode Python | 3.1 KB | - | 🖼️ Binário |
-| 5 | 🖼️ | `__pycache__/log.cpython-314.pyc` | Bytecode Python | 6.1 KB | - | 🖼️ Binário |
-| 6 | 🖼️ | `apis_input/__pycache__/aviasales.cpython-314.pyc` | Bytecode Python | 4.0 KB | - | 🖼️ Binário |
-| 7 | 🖼️ | `apis_input/__pycache__/decolar.cpython-314.pyc` | Bytecode Python | 862 B | - | 🖼️ Binário |
-| 8 | 🖼️ | `apis_input/__pycache__/google_flight.cpython-314.pyc` | Bytecode Python | 763 B | - | 🖼️ Binário |
-| 9 | 🖼️ | `apis_input/__pycache__/kiwi_tequila.cpython-314.pyc` | Bytecode Python | 2.6 KB | - | 🖼️ Binário |
-| 10 | 🖼️ | `apis_input/__pycache__/serpapi_flights.cpython-314.pyc` | Bytecode Python | 5.0 KB | - | 🖼️ Binário |
-| 11 | 🖼️ | `apis_input/__pycache__/skyscanner.cpython-314.pyc` | Bytecode Python | 1015 B | - | 🖼️ Binário |
-| 12 | 🐍 | [`apis_input/aviasales.py`](#f-11) | Python | 3.1 KB | 76 | ✅ Incluído |
-| 13 | 🐍 | [`apis_input/decolar.py`](#f-12) | Python | 477 B | 18 | ✅ Incluído |
-| 14 | 🐍 | [`apis_input/google_flight.py`](#f-13) | Python | 368 B | 14 | ✅ Incluído |
-| 15 | 🐍 | [`apis_input/kiwi_tequila.py`](#f-14) | Python | 1.8 KB | 60 | ✅ Incluído |
-| 16 | 🐍 | [`apis_input/serpapi_flights.py`](#f-15) | Python | 4.3 KB | 107 | ✅ Incluído |
-| 17 | 🐍 | [`apis_input/skyscanner.py`](#f-16) | Python | 823 B | 24 | ✅ Incluído |
-| 18 | 🖼️ | `apis_output/__pycache__/markdown_export.cpython-314.pyc` | Bytecode Python | 4.5 KB | - | 🖼️ Binário |
-| 19 | 🖼️ | `apis_output/__pycache__/telegram.cpython-314.pyc` | Bytecode Python | 7.9 KB | - | 🖼️ Binário |
-| 20 | 🖼️ | `apis_output/__pycache__/terminal.cpython-314.pyc` | Bytecode Python | 2.4 KB | - | 🖼️ Binário |
-| 21 | 🖼️ | `apis_output/__pycache__/whatsapp.cpython-314.pyc` | Bytecode Python | 1.3 KB | - | 🖼️ Binário |
-| 22 | 🐍 | [`apis_output/markdown_export.py`](#f-21) | Python | 2.9 KB | 71 | ✅ Incluído |
-| 23 | 🐍 | [`apis_output/telegram.py`](#f-22) | Python | 5.9 KB | 130 | ✅ Incluído |
-| 24 | 🐍 | [`apis_output/terminal.py`](#f-23) | Python | 1.3 KB | 40 | ✅ Incluído |
-| 25 | 🐍 | [`apis_output/whatsapp.py`](#f-24) | Python | 5.3 KB | 155 | ✅ Incluído |
-| 26 | 📄 | [`DOCS/Documentação Técnica e Arquitetural.txt`](#f-25) | Texto | 46.9 KB | 2804 | ✅ Incluído |
-| 27 | 📝 | [`DOCS/PROMPT.md`](#f-26) | Markdown | 4.9 KB | 110 | ✅ Incluído |
-| 28 | 📝 | [`DOCS/README.md`](#f-27) | Markdown | 2.3 KB | 74 | ✅ Incluído |
-| 29 | 📄 | [`DOCS/Resposta PROMPT.txt`](#f-28) | Texto | 1.7 KB | 10 | ✅ Incluído |
-| 30 | 📄 | [`log/flyscanner.log`](#f-29) | Outros | 28.3 KB | 187 | ✅ Incluído |
-| 31 | 🐍 | [`apis.py`](#f-30) | Python | 4.1 KB | 113 | ✅ Incluído |
-| 32 | 🐍 | [`buscador.py`](#f-31) | Python | 6.5 KB | 155 | ✅ Incluído |
-| 33 | 🧾 | [`condicoes.json`](#f-32) | JSON | 286 B | 14 | ✅ Incluído |
-| 34 | 🐍 | [`condicoes.py`](#f-33) | Python | 5.6 KB | 159 | ✅ Incluído |
-| 35 | 🧾 | [`config_apis.json`](#f-34) | JSON | 1.3 KB | 66 | ✅ Incluído |
-| 36 | 🐍 | [`documentador.pyw`](#f-35) | Python | 157.8 KB | 3328 | ✅ Incluído |
-| 37 | 🧾 | [`historico.json`](#f-36) | JSON | 319 B | 18 | ✅ Incluído |
-| 38 | 🐍 | [`historico.py`](#f-37) | Python | 2.2 KB | 64 | ✅ Incluído |
-| 39 | 🐍 | [`interface.pyw`](#f-38) | Python | 31.0 KB | 658 | ✅ Incluído |
-| 40 | 🐍 | [`log.py`](#f-39) | Python | 3.0 KB | 101 | ✅ Incluído |
-| 41 | 📝 | [`ofertas.md`](#f-40) | Markdown | 14.6 KB | 407 | ✅ Incluído |
+| 1 | 📄 | [`.git/hooks/applypatch-msg.sample`](#f-0) | Outros | 478 B | 15 | ✅ Incluído |
+| 2 | 📄 | [`.git/hooks/commit-msg.sample`](#f-1) | Outros | 896 B | 24 | ✅ Incluído |
+| 3 | 📄 | [`.git/hooks/fsmonitor-watchman.sample`](#f-2) | Outros | 4.6 KB | 174 | ✅ Incluído |
+| 4 | 📄 | [`.git/hooks/post-update.sample`](#f-3) | Outros | 189 B | 8 | ✅ Incluído |
+| 5 | 📄 | [`.git/hooks/pre-applypatch.sample`](#f-4) | Outros | 424 B | 14 | ✅ Incluído |
+| 6 | 📄 | [`.git/hooks/pre-commit.sample`](#f-5) | Outros | 1.6 KB | 49 | ✅ Incluído |
+| 7 | 📄 | [`.git/hooks/pre-merge-commit.sample`](#f-6) | Outros | 416 B | 13 | ✅ Incluído |
+| 8 | 📄 | [`.git/hooks/pre-push.sample`](#f-7) | Outros | 1.3 KB | 53 | ✅ Incluído |
+| 9 | 📄 | [`.git/hooks/pre-rebase.sample`](#f-8) | Outros | 4.8 KB | 169 | ✅ Incluído |
+| 10 | 📄 | [`.git/hooks/pre-receive.sample`](#f-9) | Outros | 544 B | 24 | ✅ Incluído |
+| 11 | 📄 | [`.git/hooks/prepare-commit-msg.sample`](#f-10) | Outros | 1.5 KB | 42 | ✅ Incluído |
+| 12 | 📄 | [`.git/hooks/push-to-checkout.sample`](#f-11) | Outros | 2.7 KB | 78 | ✅ Incluído |
+| 13 | 📄 | [`.git/hooks/sendemail-validate.sample`](#f-12) | Outros | 2.3 KB | 77 | ✅ Incluído |
+| 14 | 📄 | [`.git/hooks/update.sample`](#f-13) | Outros | 3.6 KB | 128 | ✅ Incluído |
+| 15 | 📄 | [`.git/info/exclude`](#f-14) | Outros | 240 B | 6 | ✅ Incluído |
+| 16 | 📄 | [`.git/logs/refs/heads/main`](#f-15) | Outros | 165 B | 1 | ✅ Incluído |
+| 17 | 📄 | [`.git/logs/refs/remotes/origin/main`](#f-16) | Outros | 150 B | 1 | ✅ Incluído |
+| 18 | 📄 | [`.git/logs/HEAD`](#f-17) | Outros | 165 B | 1 | ✅ Incluído |
+| 19 | 🖼️ | `.git/objects/02/c2a58090da1bcc7edda05bbed354cd4e2959fe` | Binário não identificado | 1.7 KB | - | 🖼️ Binário |
+| 20 | 🖼️ | `.git/objects/0a/21cadb7db0d5a0b6d525641c58adc983260e58` | Binário não identificado | 722 B | - | 🖼️ Binário |
+| 21 | 🖼️ | `.git/objects/15/f361958c53ce09aed9c6f63917ce96e5e1aabd` | Binário não identificado | 174 B | - | 🖼️ Binário |
+| 22 | 🖼️ | `.git/objects/26/7184ae95e6d559acb11f4cd3b2e27a0275fd18` | Binário não identificado | 1002 B | - | 🖼️ Binário |
+| 23 | 🖼️ | `.git/objects/34/90333be399b1034574d8f42984af1370c1b0a2` | Binário não identificado | 15.2 KB | - | 🖼️ Binário |
+| 24 | 🖼️ | `.git/objects/3c/b5ab6a4a922cdf86a82cd9f1f74baf436cad4f` | Binário não identificado | 137 B | - | 🖼️ Binário |
+| 25 | 🖼️ | `.git/objects/3d/4f613f5ebf806773bdc2c250719fdf46cf6b08` | Binário não identificado | 613 B | - | 🖼️ Binário |
+| 26 | 🖼️ | `.git/objects/3e/e1babfd8b29475a4f04894ac5fb258a7919e12` | Binário não identificado | 55.4 KB | - | 🖼️ Binário |
+| 27 | 🖼️ | `.git/objects/48/08ab758e0ad4df48354f3f920aa9f615c819a3` | Binário não identificado | 1.4 KB | - | 🖼️ Binário |
+| 28 | 🖼️ | `.git/objects/4a/eeb8b59d501eb6080ed23164da6be1e0079850` | Binário não identificado | 2.3 KB | - | 🖼️ Binário |
+| 29 | 🖼️ | `.git/objects/4c/b59194d9990da0f832c6741a6ff84ecb7ac219` | Binário não identificado | 2.1 KB | - | 🖼️ Binário |
+| 30 | 🖼️ | `.git/objects/4f/2906b4e572fd76d207ed0a667539b34cc63611` | Binário não identificado | 136 B | - | 🖼️ Binário |
+| 31 | 📄 | [`.git/objects/71/01e22178f7038e1154467a94fc20b8e4d87bdd`](#f-30) | Outros | 277 B | 4 | ✅ Incluído |
+| 32 | 🖼️ | `.git/objects/79/85c21c3289843651cc22490b40ca745e415603` | Binário não identificado | 2.3 KB | - | 🖼️ Binário |
+| 33 | 🖼️ | `.git/objects/86/175dcb48ee1954a58d9f14c2eae3acbdd36269` | Binário não identificado | 329 B | - | 🖼️ Binário |
+| 34 | 🖼️ | `.git/objects/86/6a9cb297c595d94cd771ef2938a2a260385ffb` | Binário não identificado | 161 B | - | 🖼️ Binário |
+| 35 | 🖼️ | `.git/objects/86/95f65cb76456c198cb86201a8fdda1cac4e63e` | Binário não identificado | 59 B | - | 🖼️ Binário |
+| 36 | 🖼️ | `.git/objects/92/e006d60645684a7376aa0ded27fe185a5af8fc` | Binário não identificado | 233 B | - | 🖼️ Binário |
+| 37 | 🖼️ | `.git/objects/9b/ad42b8faf6b22b607983cf9b1ab7786b0471af` | Binário não identificado | 1.6 KB | - | 🖼️ Binário |
+| 38 | 🖼️ | `.git/objects/a0/7c5b90093009e059e18ab5e49b34b15e7b53d9` | Binário não identificado | 189 B | - | 🖼️ Binário |
+| 39 | 🖼️ | `.git/objects/a1/13afef0488a9e43608c66f42ea94bbe596f482` | Binário não identificado | 2.3 KB | - | 🖼️ Binário |
+| 40 | 🖼️ | `.git/objects/a7/00f8beea4e15ebe2af6cd99f1f6cd181afaf73` | Binário não identificado | 1.4 KB | - | 🖼️ Binário |
+| 41 | 🖼️ | `.git/objects/b3/e05071d81501d67b3a780c907807b7801dfb95` | Binário não identificado | 1.0 KB | - | 🖼️ Binário |
+| 42 | 🖼️ | `.git/objects/b3/fd2e138a904ac1fc9c2561077ae06958a87abb` | Binário não identificado | 1.2 KB | - | 🖼️ Binário |
+| 43 | 🖼️ | `.git/objects/c2/4fac19c1f670939c0ddec004b2db9cd1bd8642` | Binário não identificado | 8.1 KB | - | 🖼️ Binário |
+| 44 | 🖼️ | `.git/objects/c7/35132f8a2b16c20041a96c481e069af2e5ac88` | Binário não identificado | 911 B | - | 🖼️ Binário |
+| 45 | 🖼️ | `.git/objects/cf/1f721644db5a90e5490ef86b95a81240c95c71` | Binário não identificado | 2.3 KB | - | 🖼️ Binário |
+| 46 | 🖼️ | `.git/objects/d2/7a1862a680c4199a941d73d0b8c017d092d392` | Binário não identificado | 1.1 KB | - | 🖼️ Binário |
+| 47 | 🖼️ | `.git/objects/d4/f2040909ea94981a7dd4de75597fbb00f486d4` | Binário não identificado | 492 B | - | 🖼️ Binário |
+| 48 | 🖼️ | `.git/objects/e0/44a12d30164e2feb5e07e156a15496bd9eb6e9` | Binário não identificado | 2.2 KB | - | 🖼️ Binário |
+| 49 | 🖼️ | `.git/objects/e3/6c5104418c79a8e480a47abf1042a6113d6392` | Binário não identificado | 1.3 KB | - | 🖼️ Binário |
+| 50 | 🖼️ | `.git/objects/e9/9cc6f5dc2db7a489e31270a93ca5d9178dc16f` | Binário não identificado | 311 B | - | 🖼️ Binário |
+| 51 | 🖼️ | `.git/objects/ec/7bc51918ab31e5999fcb0959988af8656572bf` | Binário não identificado | 106.6 KB | - | 🖼️ Binário |
+| 52 | 🖼️ | `.git/objects/f4/97e5a7ad10065df025ab639a8e39338099c354` | Binário não identificado | 433 B | - | 🖼️ Binário |
+| 53 | 📄 | [`.git/refs/heads/main`](#f-52) | Outros | 41 B | 1 | ✅ Incluído |
+| 54 | 📄 | [`.git/refs/remotes/origin/main`](#f-53) | Outros | 41 B | 1 | ✅ Incluído |
+| 55 | 📄 | [`.git/COMMIT_EDITMSG`](#f-54) | Outros | 12 B | 1 | ✅ Incluído |
+| 56 | 📄 | [`.git/config`](#f-55) | Outros | 310 B | 13 | ✅ Incluído |
+| 57 | 📄 | [`.git/description`](#f-56) | Outros | 73 B | 1 | ✅ Incluído |
+| 58 | 📄 | [`.git/HEAD`](#f-57) | Outros | 21 B | 1 | ✅ Incluído |
+| 59 | 🖼️ | `.git/index` | Binário não identificado | 2.6 KB | - | 🖼️ Binário |
+| 60 | 🖼️ | `__pycache__/apis.cpython-314.pyc` | Bytecode Python | 7.0 KB | - | 🖼️ Binário |
+| 61 | 🖼️ | `__pycache__/buscador.cpython-314.pyc` | Bytecode Python | 8.6 KB | - | 🖼️ Binário |
+| 62 | 🖼️ | `__pycache__/condicoes.cpython-314.pyc` | Bytecode Python | 7.6 KB | - | 🖼️ Binário |
+| 63 | 🖼️ | `__pycache__/historico.cpython-314.pyc` | Bytecode Python | 3.1 KB | - | 🖼️ Binário |
+| 64 | 🖼️ | `__pycache__/log.cpython-314.pyc` | Bytecode Python | 6.1 KB | - | 🖼️ Binário |
+| 65 | 🖼️ | `apis_input/__pycache__/aviasales.cpython-314.pyc` | Bytecode Python | 4.0 KB | - | 🖼️ Binário |
+| 66 | 🖼️ | `apis_input/__pycache__/decolar.cpython-314.pyc` | Bytecode Python | 862 B | - | 🖼️ Binário |
+| 67 | 🖼️ | `apis_input/__pycache__/google_flight.cpython-314.pyc` | Bytecode Python | 763 B | - | 🖼️ Binário |
+| 68 | 🖼️ | `apis_input/__pycache__/kiwi_tequila.cpython-314.pyc` | Bytecode Python | 2.6 KB | - | 🖼️ Binário |
+| 69 | 🖼️ | `apis_input/__pycache__/serpapi_flights.cpython-314.pyc` | Bytecode Python | 5.0 KB | - | 🖼️ Binário |
+| 70 | 🖼️ | `apis_input/__pycache__/skyscanner.cpython-314.pyc` | Bytecode Python | 1015 B | - | 🖼️ Binário |
+| 71 | 🐍 | [`apis_input/aviasales.py`](#f-70) | Python | 3.1 KB | 76 | ✅ Incluído |
+| 72 | 🐍 | [`apis_input/decolar.py`](#f-71) | Python | 477 B | 18 | ✅ Incluído |
+| 73 | 🐍 | [`apis_input/google_flight.py`](#f-72) | Python | 368 B | 14 | ✅ Incluído |
+| 74 | 🐍 | [`apis_input/kiwi_tequila.py`](#f-73) | Python | 1.8 KB | 60 | ✅ Incluído |
+| 75 | 🐍 | [`apis_input/serpapi_flights.py`](#f-74) | Python | 4.3 KB | 107 | ✅ Incluído |
+| 76 | 🐍 | [`apis_input/skyscanner.py`](#f-75) | Python | 823 B | 24 | ✅ Incluído |
+| 77 | 🖼️ | `apis_output/__pycache__/markdown_export.cpython-314.pyc` | Bytecode Python | 4.5 KB | - | 🖼️ Binário |
+| 78 | 🖼️ | `apis_output/__pycache__/telegram.cpython-314.pyc` | Bytecode Python | 7.9 KB | - | 🖼️ Binário |
+| 79 | 🖼️ | `apis_output/__pycache__/terminal.cpython-314.pyc` | Bytecode Python | 2.4 KB | - | 🖼️ Binário |
+| 80 | 🖼️ | `apis_output/__pycache__/whatsapp.cpython-314.pyc` | Bytecode Python | 1.3 KB | - | 🖼️ Binário |
+| 81 | 🐍 | [`apis_output/markdown_export.py`](#f-80) | Python | 2.9 KB | 71 | ✅ Incluído |
+| 82 | 🐍 | [`apis_output/telegram.py`](#f-81) | Python | 5.9 KB | 130 | ✅ Incluído |
+| 83 | 🐍 | [`apis_output/terminal.py`](#f-82) | Python | 1.3 KB | 40 | ✅ Incluído |
+| 84 | 🐍 | [`apis_output/whatsapp.py`](#f-83) | Python | 5.3 KB | 155 | ✅ Incluído |
+| 85 | 📄 | [`DOCS/Documentação Técnica e Arquitetural.txt`](#f-84) | Texto | 46.9 KB | 2804 | ✅ Incluído |
+| 86 | 📝 | [`DOCS/PROMPT.md`](#f-85) | Markdown | 4.9 KB | 110 | ✅ Incluído |
+| 87 | 📝 | [`DOCS/README.md`](#f-86) | Markdown | 2.3 KB | 74 | ✅ Incluído |
+| 88 | 📄 | [`DOCS/Resposta PROMPT.txt`](#f-87) | Texto | 1.7 KB | 10 | ✅ Incluído |
+| 89 | 📄 | [`log/flyscanner.log`](#f-88) | Outros | 28.3 KB | 187 | ✅ Incluído |
+| 90 | 🔀 | [`.gitignore`](#f-89) | Git | 404 B | 25 | ✅ Incluído |
+| 91 | 🐍 | [`apis.py`](#f-90) | Python | 4.1 KB | 113 | ✅ Incluído |
+| 92 | 🐍 | [`buscador.py`](#f-91) | Python | 6.5 KB | 155 | ✅ Incluído |
+| 93 | 🧾 | [`condicoes.json`](#f-92) | JSON | 286 B | 14 | ✅ Incluído |
+| 94 | 🐍 | [`condicoes.py`](#f-93) | Python | 5.6 KB | 159 | ✅ Incluído |
+| 95 | 🧾 | [`config_apis.json`](#f-94) | JSON | 1.3 KB | 66 | ✅ Incluído |
+| 96 | ⏭️ | `DOCUMENTACAO_PROJETO.md` | Saída da ferramenta | 350.7 KB | - | ⏭️ Ignorado |
+| 97 | 🐍 | [`documentador.pyw`](#f-96) | Python | 160.0 KB | 3377 | ✅ Incluído |
+| 98 | 🧾 | [`historico.json`](#f-97) | JSON | 319 B | 18 | ✅ Incluído |
+| 99 | 🐍 | [`historico.py`](#f-98) | Python | 2.2 KB | 64 | ✅ Incluído |
+| 100 | 🐍 | [`interface.pyw`](#f-99) | Python | 31.0 KB | 658 | ✅ Incluído |
+| 101 | 🐍 | [`log.py`](#f-100) | Python | 3.0 KB | 101 | ✅ Incluído |
+| 102 | 📝 | [`ofertas.md`](#f-101) | Markdown | 14.6 KB | 407 | ✅ Incluído |
 
 <a id="sec-content"></a>
 
 ## 📄 Conteúdo dos arquivos
 
+<a id="f-0"></a>
+<details>
+<summary>📄 <b>.git/hooks/applypatch-msg.sample</b> — Outros · 478 B · 15 linhas · utf-8</summary>
+
+```
+#!/bin/sh
+#
+# An example hook script to check the commit log message taken by
+# applypatch from an e-mail message.
+#
+# The hook should exit with non-zero status after issuing an
+# appropriate message if it wants to stop the commit.  The hook is
+# allowed to edit the commit message file.
+#
+# To enable this hook, rename this file to "applypatch-msg".
+
+. git-sh-setup
+commitmsg="$(git rev-parse --git-path hooks/commit-msg)"
+test -x "$commitmsg" && exec "$commitmsg" ${1+"$@"}
+:
+```
+
+</details>
+
+<a id="f-1"></a>
+<details>
+<summary>📄 <b>.git/hooks/commit-msg.sample</b> — Outros · 896 B · 24 linhas · utf-8</summary>
+
+```
+#!/bin/sh
+#
+# An example hook script to check the commit log message.
+# Called by "git commit" with one argument, the name of the file
+# that has the commit message.  The hook should exit with non-zero
+# status after issuing an appropriate message if it wants to stop the
+# commit.  The hook is allowed to edit the commit message file.
+#
+# To enable this hook, rename this file to "commit-msg".
+
+# Uncomment the below to add a Signed-off-by line to the message.
+# Doing this in a hook is a bad idea in general, but the prepare-commit-msg
+# hook is more suited to it.
+#
+# SOB=$(git var GIT_AUTHOR_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-by: \1/p')
+# grep -qs "^$SOB" "$1" || echo "$SOB" >> "$1"
+
+# This example catches duplicate Signed-off-by lines.
+
+test "" = "$(grep '^Signed-off-by: ' "$1" |
+	 sort | uniq -c | sed -e '/^[ 	]*1[ 	]/d')" || {
+	echo >&2 Duplicate Signed-off-by lines.
+	exit 1
+}
+```
+
+</details>
+
+<a id="f-2"></a>
+<details>
+<summary>📄 <b>.git/hooks/fsmonitor-watchman.sample</b> — Outros · 4.6 KB · 174 linhas · utf-8</summary>
+
+```
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use IPC::Open2;
+
+# An example hook script to integrate Watchman
+# (https://facebook.github.io/watchman/) with git to speed up detecting
+# new and modified files.
+#
+# The hook is passed a version (currently 2) and last update token
+# formatted as a string and outputs to stdout a new update token and
+# all files that have been modified since the update token. Paths must
+# be relative to the root of the working tree and separated by a single NUL.
+#
+# To enable this hook, rename this file to "query-watchman" and set
+# 'git config core.fsmonitor .git/hooks/query-watchman'
+#
+my ($version, $last_update_token) = @ARGV;
+
+# Uncomment for debugging
+# print STDERR "$0 $version $last_update_token\n";
+
+# Check the hook interface version
+if ($version ne 2) {
+	die "Unsupported query-fsmonitor hook version '$version'.\n" .
+	    "Falling back to scanning...\n";
+}
+
+my $git_work_tree = get_working_dir();
+
+my $retry = 1;
+
+my $json_pkg;
+eval {
+	require JSON::XS;
+	$json_pkg = "JSON::XS";
+	1;
+} or do {
+	require JSON::PP;
+	$json_pkg = "JSON::PP";
+};
+
+launch_watchman();
+
+sub launch_watchman {
+	my $o = watchman_query();
+	if (is_work_tree_watched($o)) {
+		output_result($o->{clock}, @{$o->{files}});
+	}
+}
+
+sub output_result {
+	my ($clockid, @files) = @_;
+
+	# Uncomment for debugging watchman output
+	# open (my $fh, ">", ".git/watchman-output.out");
+	# binmode $fh, ":utf8";
+	# print $fh "$clockid\n@files\n";
+	# close $fh;
+
+	binmode STDOUT, ":utf8";
+	print $clockid;
+	print "\0";
+	local $, = "\0";
+	print @files;
+}
+
+sub watchman_clock {
+	my $response = qx/watchman clock "$git_work_tree"/;
+	die "Failed to get clock id on '$git_work_tree'.\n" .
+		"Falling back to scanning...\n" if $? != 0;
+
+	return $json_pkg->new->utf8->decode($response);
+}
+
+sub watchman_query {
+	my $pid = open2(\*CHLD_OUT, \*CHLD_IN, 'watchman -j --no-pretty')
+	or die "open2() failed: $!\n" .
+	"Falling back to scanning...\n";
+
+	# In the query expression below we're asking for names of files that
+	# changed since $last_update_token but not from the .git folder.
+	#
+	# To accomplish this, we're using the "since" generator to use the
+	# recency index to select candidate nodes and "fields" to limit the
+	# output to file names only. Then we're using the "expression" term to
+	# further constrain the results.
+	my $last_update_line = "";
+	if (substr($last_update_token, 0, 1) eq "c") {
+		$last_update_token = "\"$last_update_token\"";
+		$last_update_line = qq[\n"since": $last_update_token,];
+	}
+	my $query = <<"	END";
+		["query", "$git_work_tree", {$last_update_line
+			"fields": ["name"],
+			"expression": ["not", ["dirname", ".git"]]
+		}]
+	END
+
+	# Uncomment for debugging the watchman query
+	# open (my $fh, ">", ".git/watchman-query.json");
+	# print $fh $query;
+	# close $fh;
+
+	print CHLD_IN $query;
+	close CHLD_IN;
+	my $response = do {local $/; <CHLD_OUT>};
+
+	# Uncomment for debugging the watch response
+	# open ($fh, ">", ".git/watchman-response.json");
+	# print $fh $response;
+	# close $fh;
+
+	die "Watchman: command returned no output.\n" .
+	"Falling back to scanning...\n" if $response eq "";
+	die "Watchman: command returned invalid output: $response\n" .
+	"Falling back to scanning...\n" unless $response =~ /^\{/;
+
+	return $json_pkg->new->utf8->decode($response);
+}
+
+sub is_work_tree_watched {
+	my ($output) = @_;
+	my $error = $output->{error};
+	if ($retry > 0 and $error and $error =~ m/unable to resolve root .* directory (.*) is not watched/) {
+		$retry--;
+		my $response = qx/watchman watch "$git_work_tree"/;
+		die "Failed to make watchman watch '$git_work_tree'.\n" .
+		    "Falling back to scanning...\n" if $? != 0;
+		$output = $json_pkg->new->utf8->decode($response);
+		$error = $output->{error};
+		die "Watchman: $error.\n" .
+		"Falling back to scanning...\n" if $error;
+
+		# Uncomment for debugging watchman output
+		# open (my $fh, ">", ".git/watchman-output.out");
+		# close $fh;
+
+		# Watchman will always return all files on the first query so
+		# return the fast "everything is dirty" flag to git and do the
+		# Watchman query just to get it over with now so we won't pay
+		# the cost in git to look up each individual file.
+		my $o = watchman_clock();
+		$error = $output->{error};
+
+		die "Watchman: $error.\n" .
+		"Falling back to scanning...\n" if $error;
+
+		output_result($o->{clock}, ("/"));
+		$last_update_token = $o->{clock};
+
+		eval { launch_watchman() };
+		return 0;
+	}
+
+	die "Watchman: $error.\n" .
+	"Falling back to scanning...\n" if $error;
+
+	return 1;
+}
+
+sub get_working_dir {
+	my $working_dir;
+	if ($^O =~ 'msys' || $^O =~ 'cygwin') {
+		$working_dir = Win32::GetCwd();
+		$working_dir =~ tr/\\/\//;
+	} else {
+		require Cwd;
+		$working_dir = Cwd::cwd();
+	}
+
+	return $working_dir;
+}
+```
+
+</details>
+
+<a id="f-3"></a>
+<details>
+<summary>📄 <b>.git/hooks/post-update.sample</b> — Outros · 189 B · 8 linhas · utf-8</summary>
+
+```
+#!/bin/sh
+#
+# An example hook script to prepare a packed repository for use over
+# dumb transports.
+#
+# To enable this hook, rename this file to "post-update".
+
+exec git update-server-info
+```
+
+</details>
+
+<a id="f-4"></a>
+<details>
+<summary>📄 <b>.git/hooks/pre-applypatch.sample</b> — Outros · 424 B · 14 linhas · utf-8</summary>
+
+```
+#!/bin/sh
+#
+# An example hook script to verify what is about to be committed
+# by applypatch from an e-mail message.
+#
+# The hook should exit with non-zero status after issuing an
+# appropriate message if it wants to stop the commit.
+#
+# To enable this hook, rename this file to "pre-applypatch".
+
+. git-sh-setup
+precommit="$(git rev-parse --git-path hooks/pre-commit)"
+test -x "$precommit" && exec "$precommit" ${1+"$@"}
+:
+```
+
+</details>
+
+<a id="f-5"></a>
+<details>
+<summary>📄 <b>.git/hooks/pre-commit.sample</b> — Outros · 1.6 KB · 49 linhas · utf-8</summary>
+
+```
+#!/bin/sh
+#
+# An example hook script to verify what is about to be committed.
+# Called by "git commit" with no arguments.  The hook should
+# exit with non-zero status after issuing an appropriate message if
+# it wants to stop the commit.
+#
+# To enable this hook, rename this file to "pre-commit".
+
+if git rev-parse --verify HEAD >/dev/null 2>&1
+then
+	against=HEAD
+else
+	# Initial commit: diff against an empty tree object
+	against=$(git hash-object -t tree /dev/null)
+fi
+
+# If you want to allow non-ASCII filenames set this variable to true.
+allownonascii=$(git config --type=bool hooks.allownonascii)
+
+# Redirect output to stderr.
+exec 1>&2
+
+# Cross platform projects tend to avoid non-ASCII filenames; prevent
+# them from being added to the repository. We exploit the fact that the
+# printable range starts at the space character and ends with tilde.
+if [ "$allownonascii" != "true" ] &&
+	# Note that the use of brackets around a tr range is ok here, (it's
+	# even required, for portability to Solaris 10's /usr/bin/tr), since
+	# the square bracket bytes happen to fall in the designated range.
+	test $(git diff-index --cached --name-only --diff-filter=A -z $against |
+	  LC_ALL=C tr -d '[ -~]\0' | wc -c) != 0
+then
+	cat <<\EOF
+Error: Attempt to add a non-ASCII file name.
+
+This can cause problems if you want to work with people on other platforms.
+
+To be portable it is advisable to rename the file.
+
+If you know what you are doing you can disable this check using:
+
+  git config hooks.allownonascii true
+EOF
+	exit 1
+fi
+
+# If there are whitespace errors, print the offending file names and fail.
+exec git diff-index --check --cached $against --
+```
+
+</details>
+
+<a id="f-6"></a>
+<details>
+<summary>📄 <b>.git/hooks/pre-merge-commit.sample</b> — Outros · 416 B · 13 linhas · utf-8</summary>
+
+```
+#!/bin/sh
+#
+# An example hook script to verify what is about to be committed.
+# Called by "git merge" with no arguments.  The hook should
+# exit with non-zero status after issuing an appropriate message to
+# stderr if it wants to stop the merge commit.
+#
+# To enable this hook, rename this file to "pre-merge-commit".
+
+. git-sh-setup
+test -x "$GIT_DIR/hooks/pre-commit" &&
+        exec "$GIT_DIR/hooks/pre-commit"
+:
+```
+
+</details>
+
+<a id="f-7"></a>
+<details>
+<summary>📄 <b>.git/hooks/pre-push.sample</b> — Outros · 1.3 KB · 53 linhas · utf-8</summary>
+
+```
+#!/bin/sh
+
+# An example hook script to verify what is about to be pushed.  Called by "git
+# push" after it has checked the remote status, but before anything has been
+# pushed.  If this script exits with a non-zero status nothing will be pushed.
+#
+# This hook is called with the following parameters:
+#
+# $1 -- Name of the remote to which the push is being done
+# $2 -- URL to which the push is being done
+#
+# If pushing without using a named remote those arguments will be equal.
+#
+# Information about the commits which are being pushed is supplied as lines to
+# the standard input in the form:
+#
+#   <local ref> <local oid> <remote ref> <remote oid>
+#
+# This sample shows how to prevent push of commits where the log message starts
+# with "WIP" (work in progress).
+
+remote="$1"
+url="$2"
+
+zero=$(git hash-object --stdin </dev/null | tr '[0-9a-f]' '0')
+
+while read local_ref local_oid remote_ref remote_oid
+do
+	if test "$local_oid" = "$zero"
+	then
+		# Handle delete
+		:
+	else
+		if test "$remote_oid" = "$zero"
+		then
+			# New branch, examine all commits
+			range="$local_oid"
+		else
+			# Update to existing branch, examine new commits
+			range="$remote_oid..$local_oid"
+		fi
+
+		# Check for WIP commit
+		commit=$(git rev-list -n 1 --grep '^WIP' "$range")
+		if test -n "$commit"
+		then
+			echo >&2 "Found WIP commit in $local_ref, not pushing"
+			exit 1
+		fi
+	fi
+done
+
+exit 0
+```
+
+</details>
+
+<a id="f-8"></a>
+<details>
+<summary>📄 <b>.git/hooks/pre-rebase.sample</b> — Outros · 4.8 KB · 169 linhas · utf-8</summary>
+
+```
+#!/bin/sh
+#
+# Copyright (c) 2006, 2008 Junio C Hamano
+#
+# The "pre-rebase" hook is run just before "git rebase" starts doing
+# its job, and can prevent the command from running by exiting with
+# non-zero status.
+#
+# The hook is called with the following parameters:
+#
+# $1 -- the upstream the series was forked from.
+# $2 -- the branch being rebased (or empty when rebasing the current branch).
+#
+# This sample shows how to prevent topic branches that are already
+# merged to 'next' branch from getting rebased, because allowing it
+# would result in rebasing already published history.
+
+publish=next
+basebranch="$1"
+if test "$#" = 2
+then
+	topic="refs/heads/$2"
+else
+	topic=`git symbolic-ref HEAD` ||
+	exit 0 ;# we do not interrupt rebasing detached HEAD
+fi
+
+case "$topic" in
+refs/heads/??/*)
+	;;
+*)
+	exit 0 ;# we do not interrupt others.
+	;;
+esac
+
+# Now we are dealing with a topic branch being rebased
+# on top of master.  Is it OK to rebase it?
+
+# Does the topic really exist?
+git show-ref -q "$topic" || {
+	echo >&2 "No such branch $topic"
+	exit 1
+}
+
+# Is topic fully merged to master?
+not_in_master=`git rev-list --pretty=oneline ^master "$topic"`
+if test -z "$not_in_master"
+then
+	echo >&2 "$topic is fully merged to master; better remove it."
+	exit 1 ;# we could allow it, but there is no point.
+fi
+
+# Is topic ever merged to next?  If so you should not be rebasing it.
+only_next_1=`git rev-list ^master "^$topic" ${publish} | sort`
+only_next_2=`git rev-list ^master           ${publish} | sort`
+if test "$only_next_1" = "$only_next_2"
+then
+	not_in_topic=`git rev-list "^$topic" master`
+	if test -z "$not_in_topic"
+	then
+		echo >&2 "$topic is already up to date with master"
+		exit 1 ;# we could allow it, but there is no point.
+	else
+		exit 0
+	fi
+else
+	not_in_next=`git rev-list --pretty=oneline ^${publish} "$topic"`
+	/usr/bin/perl -e '
+		my $topic = $ARGV[0];
+		my $msg = "* $topic has commits already merged to public branch:\n";
+		my (%not_in_next) = map {
+			/^([0-9a-f]+) /;
+			($1 => 1);
+		} split(/\n/, $ARGV[1]);
+		for my $elem (map {
+				/^([0-9a-f]+) (.*)$/;
+				[$1 => $2];
+			} split(/\n/, $ARGV[2])) {
+			if (!exists $not_in_next{$elem->[0]}) {
+				if ($msg) {
+					print STDERR $msg;
+					undef $msg;
+				}
+				print STDERR " $elem->[1]\n";
+			}
+		}
+	' "$topic" "$not_in_next" "$not_in_master"
+	exit 1
+fi
+
+<<\DOC_END
+
+This sample hook safeguards topic branches that have been
+published from being rewound.
+
+The workflow assumed here is:
+
+ * Once a topic branch forks from "master", "master" is never
+   merged into it again (either directly or indirectly).
+
+ * Once a topic branch is fully cooked and merged into "master",
+   it is deleted.  If you need to build on top of it to correct
+   earlier mistakes, a new topic branch is created by forking at
+   the tip of the "master".  This is not strictly necessary, but
+   it makes it easier to keep your history simple.
+
+ * Whenever you need to test or publish your changes to topic
+   branches, merge them into "next" branch.
+
+The script, being an example, hardcodes the publish branch name
+to be "next", but it is trivial to make it configurable via
+$GIT_DIR/config mechanism.
+
+With this workflow, you would want to know:
+
+(1) ... if a topic branch has ever been merged to "next".  Young
+    topic branches can have stupid mistakes you would rather
+    clean up before publishing, and things that have not been
+    merged into other branches can be easily rebased without
+    affecting other people.  But once it is published, you would
+    not want to rewind it.
+
+(2) ... if a topic branch has been fully merged to "master".
+    Then you can delete it.  More importantly, you should not
+    build on top of it -- other people may already want to
+    change things related to the topic as patches against your
+    "master", so if you need further changes, it is better to
+    fork the topic (perhaps with the same name) afresh from the
+    tip of "master".
+
+Let's look at this example:
+
+		   o---o---o---o---o---o---o---o---o---o "next"
+		  /       /           /           /
+		 /   a---a---b A     /           /
+		/   /               /           /
+	       /   /   c---c---c---c B         /
+	      /   /   /             \         /
+	     /   /   /   b---b C     \       /
+	    /   /   /   /             \     /
+    ---o---o---o---o---o---o---o---o---o---o---o "master"
+
+
+A, B and C are topic branches.
+
+ * A has one fix since it was merged up to "next".
+
+ * B has finished.  It has been fully merged up to "master" and "next",
+   and is ready to be deleted.
+
+ * C has not merged to "next" at all.
+
+We would want to allow C to be rebased, refuse A, and encourage
+B to be deleted.
+
+To compute (1):
+
+	git rev-list ^master ^topic next
+	git rev-list ^master        next
+
+	if these match, topic has not merged in next at all.
+
+To compute (2):
+
+	git rev-list master..topic
+
+	if this is empty, it is fully merged to "master".
+
+DOC_END
+```
+
+</details>
+
+<a id="f-9"></a>
+<details>
+<summary>📄 <b>.git/hooks/pre-receive.sample</b> — Outros · 544 B · 24 linhas · utf-8</summary>
+
+```
+#!/bin/sh
+#
+# An example hook script to make use of push options.
+# The example simply echoes all push options that start with 'echoback='
+# and rejects all pushes when the "reject" push option is used.
+#
+# To enable this hook, rename this file to "pre-receive".
+
+if test -n "$GIT_PUSH_OPTION_COUNT"
+then
+	i=0
+	while test "$i" -lt "$GIT_PUSH_OPTION_COUNT"
+	do
+		eval "value=\$GIT_PUSH_OPTION_$i"
+		case "$value" in
+		echoback=*)
+			echo "echo from the pre-receive-hook: ${value#*=}" >&2
+			;;
+		reject)
+			exit 1
+		esac
+		i=$((i + 1))
+	done
+fi
+```
+
+</details>
+
+<a id="f-10"></a>
+<details>
+<summary>📄 <b>.git/hooks/prepare-commit-msg.sample</b> — Outros · 1.5 KB · 42 linhas · utf-8</summary>
+
+```
+#!/bin/sh
+#
+# An example hook script to prepare the commit log message.
+# Called by "git commit" with the name of the file that has the
+# commit message, followed by the description of the commit
+# message's source.  The hook's purpose is to edit the commit
+# message file.  If the hook fails with a non-zero status,
+# the commit is aborted.
+#
+# To enable this hook, rename this file to "prepare-commit-msg".
+
+# This hook includes three examples. The first one removes the
+# "# Please enter the commit message..." help message.
+#
+# The second includes the output of "git diff --name-status -r"
+# into the message, just before the "git status" output.  It is
+# commented because it doesn't cope with --amend or with squashed
+# commits.
+#
+# The third example adds a Signed-off-by line to the message, that can
+# still be edited.  This is rarely a good idea.
+
+COMMIT_MSG_FILE=$1
+COMMIT_SOURCE=$2
+SHA1=$3
+
+/usr/bin/perl -i.bak -ne 'print unless(m/^. Please enter the commit message/..m/^#$/)' "$COMMIT_MSG_FILE"
+
+# case "$COMMIT_SOURCE,$SHA1" in
+#  ,|template,)
+#    /usr/bin/perl -i.bak -pe '
+#       print "\n" . `git diff --cached --name-status -r`
+# 	 if /^#/ && $first++ == 0' "$COMMIT_MSG_FILE" ;;
+#  *) ;;
+# esac
+
+# SOB=$(git var GIT_COMMITTER_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-by: \1/p')
+# git interpret-trailers --in-place --trailer "$SOB" "$COMMIT_MSG_FILE"
+# if test -z "$COMMIT_SOURCE"
+# then
+#   /usr/bin/perl -i.bak -pe 'print "\n" if !$first_line++' "$COMMIT_MSG_FILE"
+# fi
+```
+
+</details>
+
 <a id="f-11"></a>
+<details>
+<summary>📄 <b>.git/hooks/push-to-checkout.sample</b> — Outros · 2.7 KB · 78 linhas · utf-8</summary>
+
+```
+#!/bin/sh
+
+# An example hook script to update a checked-out tree on a git push.
+#
+# This hook is invoked by git-receive-pack(1) when it reacts to git
+# push and updates reference(s) in its repository, and when the push
+# tries to update the branch that is currently checked out and the
+# receive.denyCurrentBranch configuration variable is set to
+# updateInstead.
+#
+# By default, such a push is refused if the working tree and the index
+# of the remote repository has any difference from the currently
+# checked out commit; when both the working tree and the index match
+# the current commit, they are updated to match the newly pushed tip
+# of the branch. This hook is to be used to override the default
+# behaviour; however the code below reimplements the default behaviour
+# as a starting point for convenient modification.
+#
+# The hook receives the commit with which the tip of the current
+# branch is going to be updated:
+commit=$1
+
+# It can exit with a non-zero status to refuse the push (when it does
+# so, it must not modify the index or the working tree).
+die () {
+	echo >&2 "$*"
+	exit 1
+}
+
+# Or it can make any necessary changes to the working tree and to the
+# index to bring them to the desired state when the tip of the current
+# branch is updated to the new commit, and exit with a zero status.
+#
+# For example, the hook can simply run git read-tree -u -m HEAD "$1"
+# in order to emulate git fetch that is run in the reverse direction
+# with git push, as the two-tree form of git read-tree -u -m is
+# essentially the same as git switch or git checkout that switches
+# branches while keeping the local changes in the working tree that do
+# not interfere with the difference between the branches.
+
+# The below is a more-or-less exact translation to shell of the C code
+# for the default behaviour for git's push-to-checkout hook defined in
+# the push_to_deploy() function in builtin/receive-pack.c.
+#
+# Note that the hook will be executed from the repository directory,
+# not from the working tree, so if you want to perform operations on
+# the working tree, you will have to adapt your code accordingly, e.g.
+# by adding "cd .." or using relative paths.
+
+if ! git update-index -q --ignore-submodules --refresh
+then
+	die "Up-to-date check failed"
+fi
+
+if ! git diff-files --quiet --ignore-submodules --
+then
+	die "Working directory has unstaged changes"
+fi
+
+# This is a rough translation of:
+#
+#   head_has_history() ? "HEAD" : EMPTY_TREE_SHA1_HEX
+if git cat-file -e HEAD 2>/dev/null
+then
+	head=HEAD
+else
+	head=$(git hash-object -t tree --stdin </dev/null)
+fi
+
+if ! git diff-index --quiet --cached --ignore-submodules $head --
+then
+	die "Working directory has staged changes"
+fi
+
+if ! git read-tree -u -m "$commit"
+then
+	die "Could not update working tree to new HEAD"
+fi
+```
+
+</details>
+
+<a id="f-12"></a>
+<details>
+<summary>📄 <b>.git/hooks/sendemail-validate.sample</b> — Outros · 2.3 KB · 77 linhas · utf-8</summary>
+
+```
+#!/bin/sh
+
+# An example hook script to validate a patch (and/or patch series) before
+# sending it via email.
+#
+# The hook should exit with non-zero status after issuing an appropriate
+# message if it wants to prevent the email(s) from being sent.
+#
+# To enable this hook, rename this file to "sendemail-validate".
+#
+# By default, it will only check that the patch(es) can be applied on top of
+# the default upstream branch without conflicts in a secondary worktree. After
+# validation (successful or not) of the last patch of a series, the worktree
+# will be deleted.
+#
+# The following config variables can be set to change the default remote and
+# remote ref that are used to apply the patches against:
+#
+#   sendemail.validateRemote (default: origin)
+#   sendemail.validateRemoteRef (default: HEAD)
+#
+# Replace the TODO placeholders with appropriate checks according to your
+# needs.
+
+validate_cover_letter () {
+	file="$1"
+	# TODO: Replace with appropriate checks (e.g. spell checking).
+	true
+}
+
+validate_patch () {
+	file="$1"
+	# Ensure that the patch applies without conflicts.
+	git am -3 "$file" || return
+	# TODO: Replace with appropriate checks for this patch
+	# (e.g. checkpatch.pl).
+	true
+}
+
+validate_series () {
+	# TODO: Replace with appropriate checks for the whole series
+	# (e.g. quick build, coding style checks, etc.).
+	true
+}
+
+# main -------------------------------------------------------------------------
+
+if test "$GIT_SENDEMAIL_FILE_COUNTER" = 1
+then
+	remote=$(git config --default origin --get sendemail.validateRemote) &&
+	ref=$(git config --default HEAD --get sendemail.validateRemoteRef) &&
+	worktree=$(mktemp --tmpdir -d sendemail-validate.XXXXXXX) &&
+	git worktree add -fd --checkout "$worktree" "refs/remotes/$remote/$ref" &&
+	git config --replace-all sendemail.validateWorktree "$worktree"
+else
+	worktree=$(git config --get sendemail.validateWorktree)
+fi || {
+	echo "sendemail-validate: error: failed to prepare worktree" >&2
+	exit 1
+}
+
+unset GIT_DIR GIT_WORK_TREE
+cd "$worktree" &&
+
+if grep -q "^diff --git " "$1"
+then
+	validate_patch "$1"
+else
+	validate_cover_letter "$1"
+fi &&
+
+if test "$GIT_SENDEMAIL_FILE_COUNTER" = "$GIT_SENDEMAIL_FILE_TOTAL"
+then
+	git config --unset-all sendemail.validateWorktree &&
+	trap 'git worktree remove -ff "$worktree"' EXIT &&
+	validate_series
+fi
+```
+
+</details>
+
+<a id="f-13"></a>
+<details>
+<summary>📄 <b>.git/hooks/update.sample</b> — Outros · 3.6 KB · 128 linhas · utf-8</summary>
+
+```
+#!/bin/sh
+#
+# An example hook script to block unannotated tags from entering.
+# Called by "git receive-pack" with arguments: refname sha1-old sha1-new
+#
+# To enable this hook, rename this file to "update".
+#
+# Config
+# ------
+# hooks.allowunannotated
+#   This boolean sets whether unannotated tags will be allowed into the
+#   repository.  By default they won't be.
+# hooks.allowdeletetag
+#   This boolean sets whether deleting tags will be allowed in the
+#   repository.  By default they won't be.
+# hooks.allowmodifytag
+#   This boolean sets whether a tag may be modified after creation. By default
+#   it won't be.
+# hooks.allowdeletebranch
+#   This boolean sets whether deleting branches will be allowed in the
+#   repository.  By default they won't be.
+# hooks.denycreatebranch
+#   This boolean sets whether remotely creating branches will be denied
+#   in the repository.  By default this is allowed.
+#
+
+# --- Command line
+refname="$1"
+oldrev="$2"
+newrev="$3"
+
+# --- Safety check
+if [ -z "$GIT_DIR" ]; then
+	echo "Don't run this script from the command line." >&2
+	echo " (if you want, you could supply GIT_DIR then run" >&2
+	echo "  $0 <ref> <oldrev> <newrev>)" >&2
+	exit 1
+fi
+
+if [ -z "$refname" -o -z "$oldrev" -o -z "$newrev" ]; then
+	echo "usage: $0 <ref> <oldrev> <newrev>" >&2
+	exit 1
+fi
+
+# --- Config
+allowunannotated=$(git config --type=bool hooks.allowunannotated)
+allowdeletebranch=$(git config --type=bool hooks.allowdeletebranch)
+denycreatebranch=$(git config --type=bool hooks.denycreatebranch)
+allowdeletetag=$(git config --type=bool hooks.allowdeletetag)
+allowmodifytag=$(git config --type=bool hooks.allowmodifytag)
+
+# check for no description
+projectdesc=$(sed -e '1q' "$GIT_DIR/description")
+case "$projectdesc" in
+"Unnamed repository"* | "")
+	echo "*** Project description file hasn't been set" >&2
+	exit 1
+	;;
+esac
+
+# --- Check types
+# if $newrev is 0000...0000, it's a commit to delete a ref.
+zero=$(git hash-object --stdin </dev/null | tr '[0-9a-f]' '0')
+if [ "$newrev" = "$zero" ]; then
+	newrev_type=delete
+else
+	newrev_type=$(git cat-file -t $newrev)
+fi
+
+case "$refname","$newrev_type" in
+	refs/tags/*,commit)
+		# un-annotated tag
+		short_refname=${refname##refs/tags/}
+		if [ "$allowunannotated" != "true" ]; then
+			echo "*** The un-annotated tag, $short_refname, is not allowed in this repository" >&2
+			echo "*** Use 'git tag [ -a | -s ]' for tags you want to propagate." >&2
+			exit 1
+		fi
+		;;
+	refs/tags/*,delete)
+		# delete tag
+		if [ "$allowdeletetag" != "true" ]; then
+			echo "*** Deleting a tag is not allowed in this repository" >&2
+			exit 1
+		fi
+		;;
+	refs/tags/*,tag)
+		# annotated tag
+		if [ "$allowmodifytag" != "true" ] && git rev-parse $refname > /dev/null 2>&1
+		then
+			echo "*** Tag '$refname' already exists." >&2
+			echo "*** Modifying a tag is not allowed in this repository." >&2
+			exit 1
+		fi
+		;;
+	refs/heads/*,commit)
+		# branch
+		if [ "$oldrev" = "$zero" -a "$denycreatebranch" = "true" ]; then
+			echo "*** Creating a branch is not allowed in this repository" >&2
+			exit 1
+		fi
+		;;
+	refs/heads/*,delete)
+		# delete branch
+		if [ "$allowdeletebranch" != "true" ]; then
+			echo "*** Deleting a branch is not allowed in this repository" >&2
+			exit 1
+		fi
+		;;
+	refs/remotes/*,commit)
+		# tracking branch
+		;;
+	refs/remotes/*,delete)
+		# delete tracking branch
+		if [ "$allowdeletebranch" != "true" ]; then
+			echo "*** Deleting a tracking branch is not allowed in this repository" >&2
+			exit 1
+		fi
+		;;
+	*)
+		# Anything else (is there anything else?)
+		echo "*** Update hook: unknown type of update to ref $refname of type $newrev_type" >&2
+		exit 1
+		;;
+esac
+
+# --- Finished
+exit 0
+```
+
+</details>
+
+<a id="f-14"></a>
+<details>
+<summary>📄 <b>.git/info/exclude</b> — Outros · 240 B · 6 linhas · utf-8</summary>
+
+```
+# git ls-files --others --exclude-from=.git/info/exclude
+# Lines that start with '#' are comments.
+# For a project mostly in C, the following would be a good set of
+# exclude patterns (uncomment them if you want to use them):
+# *.[oa]
+# *~
+```
+
+</details>
+
+<a id="f-15"></a>
+<details>
+<summary>📄 <b>.git/logs/refs/heads/main</b> — Outros · 165 B · 1 linhas · utf-8</summary>
+
+```
+0000000000000000000000000000000000000000 3cb5ab6a4a922cdf86a82cd9f1f74baf436cad4f Pedro <joaopedrotavarres@gmail.com> 1793713948 -0300	commit (initial): Versão 1.0
+```
+
+</details>
+
+<a id="f-16"></a>
+<details>
+<summary>📄 <b>.git/logs/refs/remotes/origin/main</b> — Outros · 150 B · 1 linhas · utf-8</summary>
+
+```
+0000000000000000000000000000000000000000 3cb5ab6a4a922cdf86a82cd9f1f74baf436cad4f Pedro <joaopedrotavarres@gmail.com> 1793713959 -0300	update by push
+```
+
+</details>
+
+<a id="f-17"></a>
+<details>
+<summary>📄 <b>.git/logs/HEAD</b> — Outros · 165 B · 1 linhas · utf-8</summary>
+
+```
+0000000000000000000000000000000000000000 3cb5ab6a4a922cdf86a82cd9f1f74baf436cad4f Pedro <joaopedrotavarres@gmail.com> 1793713948 -0300	commit (initial): Versão 1.0
+```
+
+</details>
+
+<a id="f-30"></a>
+<details>
+<summary>📄 <b>.git/objects/71/01e22178f7038e1154467a94fc20b8e4d87bdd</b> — Outros · 277 B · 4 linhas · cp1252 (heurística, não confirmada)</summary>
+
+```
+x}PÁJÃ@õ¼_ñX/
+m="…Rmé¡M¡ÞJ	“d’.nv—Í¦XÄ¯ñà‡ôÇÜ¤'/Îiæ½á½7“k›ãþáñJJ)È©6SÆuá®¶¶ÖœUZÕ‡0q'1þ§Ä6t9´jœ…#OP&píéüsþ¶¨ºÐE¬´X¢˜¢íDôžëtõŠ'È¿œb6]mÒm6K×óå"nìb}Êâ@G–	dL›½óIŽ 5å¬{lÖ“(	ÓÍ²'‚r¶Ç[6’_#±¢ä
+y×äo
+k*U'(UFˆSl,·àãçxT’ÁùoéKš`Ù8Í›@máÉ±‡gÒ°b¶†¢ûQœ·G.­öÆNÏñ»ý/ÒŠuJ
+```
+
+</details>
+
+<a id="f-52"></a>
+<details>
+<summary>📄 <b>.git/refs/heads/main</b> — Outros · 41 B · 1 linhas · utf-8</summary>
+
+```
+3cb5ab6a4a922cdf86a82cd9f1f74baf436cad4f
+```
+
+</details>
+
+<a id="f-53"></a>
+<details>
+<summary>📄 <b>.git/refs/remotes/origin/main</b> — Outros · 41 B · 1 linhas · utf-8</summary>
+
+```
+3cb5ab6a4a922cdf86a82cd9f1f74baf436cad4f
+```
+
+</details>
+
+<a id="f-54"></a>
+<details>
+<summary>📄 <b>.git/COMMIT_EDITMSG</b> — Outros · 12 B · 1 linhas · utf-8</summary>
+
+```
+Versão 1.0
+```
+
+</details>
+
+<a id="f-55"></a>
+<details>
+<summary>📄 <b>.git/config</b> — Outros · 310 B · 13 linhas · utf-8</summary>
+
+```
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[remote "origin"]
+	url = https://github.com/pedro-tavares-dev/flyscanner.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+```
+
+</details>
+
+<a id="f-56"></a>
+<details>
+<summary>📄 <b>.git/description</b> — Outros · 73 B · 1 linhas · utf-8</summary>
+
+```
+Unnamed repository; edit this file 'description' to name the repository.
+```
+
+</details>
+
+<a id="f-57"></a>
+<details>
+<summary>📄 <b>.git/HEAD</b> — Outros · 21 B · 1 linhas · utf-8</summary>
+
+```
+ref: refs/heads/main
+```
+
+</details>
+
+<a id="f-70"></a>
 <details>
 <summary>🐍 <b>apis_input/aviasales.py</b> — Python · 3.1 KB · 76 linhas · utf-8</summary>
 
@@ -251,7 +1547,7 @@ def buscar(config: dict, condicoes: dict) -> list:
 
 </details>
 
-<a id="f-12"></a>
+<a id="f-71"></a>
 <details>
 <summary>🐍 <b>apis_input/decolar.py</b> — Python · 477 B · 18 linhas · utf-8</summary>
 
@@ -278,7 +1574,7 @@ def buscar(config: dict, condicoes: dict) -> list:
 
 </details>
 
-<a id="f-13"></a>
+<a id="f-72"></a>
 <details>
 <summary>🐍 <b>apis_input/google_flight.py</b> — Python · 368 B · 14 linhas · utf-8</summary>
 
@@ -301,7 +1597,7 @@ def buscar(config: dict, condicoes: dict) -> list:
 
 </details>
 
-<a id="f-14"></a>
+<a id="f-73"></a>
 <details>
 <summary>🐍 <b>apis_input/kiwi_tequila.py</b> — Python · 1.8 KB · 60 linhas · utf-8</summary>
 
@@ -370,7 +1666,7 @@ def buscar(config: dict, condicoes: dict) -> list:
 
 </details>
 
-<a id="f-15"></a>
+<a id="f-74"></a>
 <details>
 <summary>🐍 <b>apis_input/serpapi_flights.py</b> — Python · 4.3 KB · 107 linhas · utf-8</summary>
 
@@ -486,7 +1782,7 @@ def buscar(config: dict, condicoes: dict) -> list:
 
 </details>
 
-<a id="f-16"></a>
+<a id="f-75"></a>
 <details>
 <summary>🐍 <b>apis_input/skyscanner.py</b> — Python · 823 B · 24 linhas · utf-8</summary>
 
@@ -519,7 +1815,7 @@ def buscar(config: dict, condicoes: dict) -> list:
 
 </details>
 
-<a id="f-21"></a>
+<a id="f-80"></a>
 <details>
 <summary>🐍 <b>apis_output/markdown_export.py</b> — Python · 2.9 KB · 71 linhas · utf-8</summary>
 
@@ -599,7 +1895,7 @@ def enviar(voo: dict, config: dict, log_callback=None) -> None:
 
 </details>
 
-<a id="f-22"></a>
+<a id="f-81"></a>
 <details>
 <summary>🐍 <b>apis_output/telegram.py</b> — Python · 5.9 KB · 130 linhas · utf-8</summary>
 
@@ -738,7 +2034,7 @@ def enviar(voo: dict, config: dict, log_callback=None) -> None:
 
 </details>
 
-<a id="f-23"></a>
+<a id="f-82"></a>
 <details>
 <summary>🐍 <b>apis_output/terminal.py</b> — Python · 1.3 KB · 40 linhas · utf-8</summary>
 
@@ -787,7 +2083,7 @@ def enviar(voo: dict, config: dict, log_callback=None) -> None:
 
 </details>
 
-<a id="f-24"></a>
+<a id="f-83"></a>
 <details>
 <summary>🐍 <b>apis_output/whatsapp.py</b> — Python · 5.3 KB · 155 linhas · utf-8</summary>
 
@@ -951,7 +2247,7 @@ def enviar(voo: dict, config: dict, log_callback=None) -> None:
 
 </details>
 
-<a id="f-25"></a>
+<a id="f-84"></a>
 <details>
 <summary>📄 <b>DOCS/Documentação Técnica e Arquitetural.txt</b> — Texto · 46.9 KB · 2804 linhas · utf-8</summary>
 
@@ -3764,7 +5060,7 @@ Essa separação deve ser preservada em todas as versões futuras do FlyScanner.
 
 </details>
 
-<a id="f-26"></a>
+<a id="f-85"></a>
 <details>
 <summary>📝 <b>DOCS/PROMPT.md</b> — Markdown · 4.9 KB · 110 linhas · utf-8</summary>
 
@@ -3883,7 +5179,7 @@ A estrutura que te mandei ja é auto expllicativa mas vamos lá..:
 
 </details>
 
-<a id="f-27"></a>
+<a id="f-86"></a>
 <details>
 <summary>📝 <b>DOCS/README.md</b> — Markdown · 2.3 KB · 74 linhas · utf-8</summary>
 
@@ -3966,7 +5262,7 @@ Ela aparece automaticamente na aba "Retorno" da interface.
 
 </details>
 
-<a id="f-28"></a>
+<a id="f-87"></a>
 <details>
 <summary>📄 <b>DOCS/Resposta PROMPT.txt</b> — Texto · 1.7 KB · 10 linhas · utf-8</summary>
 
@@ -3985,7 +5281,7 @@ Testei o fluxo completo (sem GUI, já que este ambiente é headless) rodando bus
 
 </details>
 
-<a id="f-29"></a>
+<a id="f-88"></a>
 <details>
 <summary>📄 <b>log/flyscanner.log</b> — Outros · 28.3 KB · 187 linhas · utf-8</summary>
 
@@ -4181,7 +5477,41 @@ Testei o fluxo completo (sem GUI, já que este ambiente é headless) rodando bus
 
 </details>
 
-<a id="f-30"></a>
+<a id="f-89"></a>
+<details>
+<summary>🔀 <b>.gitignore</b> — Git · 404 B · 25 linhas · utf-8</summary>
+
+```gitignore
+# Ambientes Virtuais e Dependências
+venv/
+env/
+.venv/
+node_modules/
+
+# Caches e Compilados Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Variáveis de Ambiente e Configurações Locais
+.env
+.vscode/
+.idea/
+
+# Temporários e saídas pesadas do Documentador (DOCUMENTACAO_PROJETO.md é versionado)
+*.gravando_tmp
+TREE_PROJETO*
+CONTEUDO_PROJETO*
+RELATORIO_EXTRACAO*
+PROMPT_IA*
+PACOTE_FUSAO_1_2_3*
+PACOTE_FINAL*
+```
+
+</details>
+
+<a id="f-90"></a>
 <details>
 <summary>🐍 <b>apis.py</b> — Python · 4.1 KB · 113 linhas · utf-8</summary>
 
@@ -4303,7 +5633,7 @@ def enviar_para(modulo, voo: dict, config: dict) -> None:
 
 </details>
 
-<a id="f-31"></a>
+<a id="f-91"></a>
 <details>
 <summary>🐍 <b>buscador.py</b> — Python · 6.5 KB · 155 linhas · utf-8</summary>
 
@@ -4467,7 +5797,7 @@ class Robo:
 
 </details>
 
-<a id="f-32"></a>
+<a id="f-92"></a>
 <details>
 <summary>🧾 <b>condicoes.json</b> — JSON · 286 B · 14 linhas · utf-8</summary>
 
@@ -4490,7 +5820,7 @@ class Robo:
 
 </details>
 
-<a id="f-33"></a>
+<a id="f-93"></a>
 <details>
 <summary>🐍 <b>condicoes.py</b> — Python · 5.6 KB · 159 linhas · utf-8</summary>
 
@@ -4658,7 +5988,7 @@ def passagem_atende(voo: dict, condicoes: dict = None) -> bool:
 
 </details>
 
-<a id="f-34"></a>
+<a id="f-94"></a>
 <details>
 <summary>🧾 <b>config_apis.json</b> — JSON · 1.3 KB · 66 linhas · utf-8</summary>
 
@@ -4733,9 +6063,9 @@ def passagem_atende(voo: dict, condicoes: dict = None) -> bool:
 
 </details>
 
-<a id="f-35"></a>
+<a id="f-96"></a>
 <details>
-<summary>🐍 <b>documentador.pyw</b> — Python · 157.8 KB · 3328 linhas · utf-8</summary>
+<summary>🐍 <b>documentador.pyw</b> — Python · 160.0 KB · 3377 linhas · utf-8</summary>
 
 ``````python
 #!/usr/bin/env python3
@@ -4891,7 +6221,7 @@ CONFIG_FILE = CONFIG_DIR / "config.json"
 DEFAULT_CFG = dict(
     rules_text="", excl_checked=[], sens=False, selfign=False, maxmb=0.0, part=0, workers=0,
     md_emoji=True, md_collapse=True, md_contents=True, md_tree=True, md_stats=True,
-    appearance="System", scale=1.0, heavy_limit=1000, heavy_action="ask",
+    appearance="System", scale=1.0, heavy_limit=1000, heavy_action="ask", project_version=1.0,
     autotest_before_push=False,  # resquício: roda o teste automatizado antes do push (ainda não implementado)
 )
 GLOBAL_CFG_KEYS = {"appearance", "scale", "workers", "part", "md_emoji", "md_collapse",
@@ -6421,6 +7751,43 @@ PACOTE_FUSAO_1_2_3*
 PACOTE_FINAL*
 """
 
+MIT_LICENSE_TEMPLATE = """MIT License
+
+Copyright (c) {year} {author}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+"""
+
+def ensure_license(root):
+    """Cria uma licença MIT padrão se nenhuma licença existir. Retorna True se criou."""
+    for name in ("LICENSE", "LICENSE.txt", "LICENSE.md"):
+        if (Path(root) / name).exists():
+            return False
+    # Tenta pegar o nome do usuario do git local
+    code, out, _ = git_run(["git", "config", "user.name"], root)
+    author = out.strip() if code == 0 and out.strip() else "Contributors"
+    year = datetime.now().year
+    
+    p = Path(root) / "LICENSE"
+    p.write_text(MIT_LICENSE_TEMPLATE.format(year=year, author=author), encoding="utf-8", newline="\n")
+    return True
+
 
 def git_run(args, cwd, timeout=600):
     """Executa um comando (lista de argumentos, sem shell). Retorna (código, stdout, stderr)."""
@@ -6483,6 +7850,8 @@ def git_publish(root, msg, doc_store=None, doc_name=PUSH_DOC_NAME, log=None, pub
         return fail("Git não encontrado no PATH. Instale em https://git-scm.com/")
     if ensure_gitignore(root):
         L("📄 .gitignore padrão criado.")
+    if ensure_license(root):
+        L("⚖️ Licença MIT padrão criada.")
     if doc_store is not None:
         write_store_file(doc_store, root / doc_name)
         res["doc_included"] = True
@@ -7693,25 +9062,35 @@ class App(_CTkBase):
             if ans is None:
                 return
             public = ans
+        curr_v = float(self.cfg.get("project_version", 1.0))
         default = DEFAULT_COMMIT_MSG + (" + documentação" if with_doc else "")
-        msg = ctk.CTkInputDialog(text=f"Mensagem do commit (vazio = «{default}»):", title="Subir pro GitHub").get_input()
+        
+        dialog_text = f"Versão {curr_v:.1f}\nO que foi editado/implementado?\n(vazio = «{default}»):"
+        msg = ctk.CTkInputDialog(text=dialog_text, title="Subir pro GitHub").get_input()
         if msg is None:
             return
+            
         msg = msg.strip() or default
+        final_msg = f"v{curr_v:.1f} - {msg}"
+        
         store = self.mdstore if with_doc else None
         autotest = bool(self.cfg.get("autotest_before_push"))
 
         def fn():
             if autotest and run_autotest(ROOT, lambda t: self.prog(0, None, t)) is False:
                 raise RuntimeError("Teste automatizado reprovou; push cancelado.")
-            r = git_publish(ROOT, msg, store, PUSH_DOC_NAME, lambda t: self.prog(0, None, t), public)
-            self.ui(lambda: self.github_done(r))
+            r = git_publish(ROOT, final_msg, store, PUSH_DOC_NAME, lambda t: self.prog(0, None, t), public)
+            self.ui(lambda: self.github_done(r, curr_v))
         self.cur_stage = None
         self.run_job(fn, "Subindo para o GitHub...")
 
-    def github_done(self, r):
+    def github_done(self, r, pushed_version=None):
         detail = "\n".join(r["log"][-25:])
         if r["ok"]:
+            if pushed_version is not None:
+                self.cfg["project_version"] = round(pushed_version + 0.1, 1)
+                save_config(ROOT, self.cfg)
+                
             extra = " (com documentação)" if r["doc_included"] else ""
             self.status("Publicado no GitHub" + extra + ".")
             self.toast("Subiu pro GitHub" + extra + "!", "ok", 5000)
@@ -8070,7 +9449,7 @@ if __name__ == "__main__":
 
 </details>
 
-<a id="f-36"></a>
+<a id="f-97"></a>
 <details>
 <summary>🧾 <b>historico.json</b> — JSON · 319 B · 18 linhas · utf-8</summary>
 
@@ -8097,7 +9476,7 @@ if __name__ == "__main__":
 
 </details>
 
-<a id="f-37"></a>
+<a id="f-98"></a>
 <details>
 <summary>🐍 <b>historico.py</b> — Python · 2.2 KB · 64 linhas · utf-8</summary>
 
@@ -8170,7 +9549,7 @@ def processar_score(voo: dict) -> dict:
 
 </details>
 
-<a id="f-38"></a>
+<a id="f-99"></a>
 <details>
 <summary>🐍 <b>interface.pyw</b> — Python · 31.0 KB · 658 linhas · utf-8</summary>
 
@@ -8837,7 +10216,7 @@ if __name__ == "__main__":
 
 </details>
 
-<a id="f-39"></a>
+<a id="f-100"></a>
 <details>
 <summary>🐍 <b>log.py</b> — Python · 3.0 KB · 101 linhas · utf-8</summary>
 
@@ -8947,7 +10326,7 @@ def limpar_log():
 
 </details>
 
-<a id="f-40"></a>
+<a id="f-101"></a>
 <details>
 <summary>📝 <b>ofertas.md</b> — Markdown · 14.6 KB · 407 linhas · utf-8</summary>
 
@@ -9367,10 +10746,44 @@ def limpar_log():
 
 ## 🚫 Itens não incorporados
 
-### 🖼️ Binários (15)
+### 🖼️ Binários (49)
 
 | Arquivo | Tipo | Tamanho |
 |---|---|--:|
+| `.git/objects/02/c2a58090da1bcc7edda05bbed354cd4e2959fe` | Binário não identificado | 1.7 KB |
+| `.git/objects/0a/21cadb7db0d5a0b6d525641c58adc983260e58` | Binário não identificado | 722 B |
+| `.git/objects/15/f361958c53ce09aed9c6f63917ce96e5e1aabd` | Binário não identificado | 174 B |
+| `.git/objects/26/7184ae95e6d559acb11f4cd3b2e27a0275fd18` | Binário não identificado | 1002 B |
+| `.git/objects/34/90333be399b1034574d8f42984af1370c1b0a2` | Binário não identificado | 15.2 KB |
+| `.git/objects/3c/b5ab6a4a922cdf86a82cd9f1f74baf436cad4f` | Binário não identificado | 137 B |
+| `.git/objects/3d/4f613f5ebf806773bdc2c250719fdf46cf6b08` | Binário não identificado | 613 B |
+| `.git/objects/3e/e1babfd8b29475a4f04894ac5fb258a7919e12` | Binário não identificado | 55.4 KB |
+| `.git/objects/48/08ab758e0ad4df48354f3f920aa9f615c819a3` | Binário não identificado | 1.4 KB |
+| `.git/objects/4a/eeb8b59d501eb6080ed23164da6be1e0079850` | Binário não identificado | 2.3 KB |
+| `.git/objects/4c/b59194d9990da0f832c6741a6ff84ecb7ac219` | Binário não identificado | 2.1 KB |
+| `.git/objects/4f/2906b4e572fd76d207ed0a667539b34cc63611` | Binário não identificado | 136 B |
+| `.git/objects/79/85c21c3289843651cc22490b40ca745e415603` | Binário não identificado | 2.3 KB |
+| `.git/objects/86/175dcb48ee1954a58d9f14c2eae3acbdd36269` | Binário não identificado | 329 B |
+| `.git/objects/86/6a9cb297c595d94cd771ef2938a2a260385ffb` | Binário não identificado | 161 B |
+| `.git/objects/86/95f65cb76456c198cb86201a8fdda1cac4e63e` | Binário não identificado | 59 B |
+| `.git/objects/92/e006d60645684a7376aa0ded27fe185a5af8fc` | Binário não identificado | 233 B |
+| `.git/objects/9b/ad42b8faf6b22b607983cf9b1ab7786b0471af` | Binário não identificado | 1.6 KB |
+| `.git/objects/a0/7c5b90093009e059e18ab5e49b34b15e7b53d9` | Binário não identificado | 189 B |
+| `.git/objects/a1/13afef0488a9e43608c66f42ea94bbe596f482` | Binário não identificado | 2.3 KB |
+| `.git/objects/a7/00f8beea4e15ebe2af6cd99f1f6cd181afaf73` | Binário não identificado | 1.4 KB |
+| `.git/objects/b3/e05071d81501d67b3a780c907807b7801dfb95` | Binário não identificado | 1.0 KB |
+| `.git/objects/b3/fd2e138a904ac1fc9c2561077ae06958a87abb` | Binário não identificado | 1.2 KB |
+| `.git/objects/c2/4fac19c1f670939c0ddec004b2db9cd1bd8642` | Binário não identificado | 8.1 KB |
+| `.git/objects/c7/35132f8a2b16c20041a96c481e069af2e5ac88` | Binário não identificado | 911 B |
+| `.git/objects/cf/1f721644db5a90e5490ef86b95a81240c95c71` | Binário não identificado | 2.3 KB |
+| `.git/objects/d2/7a1862a680c4199a941d73d0b8c017d092d392` | Binário não identificado | 1.1 KB |
+| `.git/objects/d4/f2040909ea94981a7dd4de75597fbb00f486d4` | Binário não identificado | 492 B |
+| `.git/objects/e0/44a12d30164e2feb5e07e156a15496bd9eb6e9` | Binário não identificado | 2.2 KB |
+| `.git/objects/e3/6c5104418c79a8e480a47abf1042a6113d6392` | Binário não identificado | 1.3 KB |
+| `.git/objects/e9/9cc6f5dc2db7a489e31270a93ca5d9178dc16f` | Binário não identificado | 311 B |
+| `.git/objects/ec/7bc51918ab31e5999fcb0959988af8656572bf` | Binário não identificado | 106.6 KB |
+| `.git/objects/f4/97e5a7ad10065df025ab639a8e39338099c354` | Binário não identificado | 433 B |
+| `.git/index` | Binário não identificado | 2.6 KB |
 | `__pycache__/apis.cpython-314.pyc` | Bytecode Python | 7.0 KB |
 | `__pycache__/buscador.cpython-314.pyc` | Bytecode Python | 8.6 KB |
 | `__pycache__/condicoes.cpython-314.pyc` | Bytecode Python | 7.6 KB |
@@ -9393,9 +10806,11 @@ def limpar_log():
 |---|---|
 | `evolution-api/` | `Pasta Massiva (> 1000 arquivos)` |
 
-### ⏭️ Ignorados (0)
+### ⏭️ Ignorados (1)
 
-_Nenhum._
+| Arquivo | Motivo |
+|---|---|
+| `DOCUMENTACAO_PROJETO.md` | saída gerada pela própria ferramenta (evita contaminar execuções seguintes) |
 
 ### 🔗 Links simbólicos (0)
 
@@ -9411,13 +10826,13 @@ _Nenhum._
 
 | Verificação | Resultado |
 |---|---|
-| 🔑 SHA256 do conteúdo extraído | `29be23e2a93109bd9bdf9dfc09060bf88d01d48339777e9f479e6d7878db8214` |
-| 🌳 SHA256 da TREE | `c463dfcc13553c118cdde753a982e724d227f13cdee37310d3b919aaa3b1951b` |
+| 🔑 SHA256 do conteúdo extraído | `d30eb1427c9c1f8c53f8efc84152d2bf00e2a210c16c235f6cfa8cd4e470e1eb` |
+| 🌳 SHA256 da TREE | `17a8d4d752ab28a9b3035309a43e2b04896e848a882f91022fd1975da7234e72` |
 | 🛡️ Situação | ✅ completa |
 | 📏 Regras de exclusão | nenhuma |
-| 🔤 Arquivos fora de UTF-8 | 0 |
+| 🔤 Arquivos fora de UTF-8 | 1 — `.git/objects/71/01e22178f7038e1154467a94fc20b8e4d87bdd` |
 | 🧪 Falhas de verificação de bytes | 0 |
 
 ---
 
-<sub>📚 Gerado por documentador.pyw v1.0 · 2026-11-03 10:51:37</sub>
+<sub>📚 Gerado por documentador.pyw v1.0 · 2026-11-03 11:09:47</sub>
