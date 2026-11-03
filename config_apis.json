@@ -1,0 +1,66 @@
+{
+  "input": {
+    "aviasales": {
+      "intervalo_minutos": 60,
+      "token": "f573ae43b54b441be9625200394b982a"
+    },
+    "decolar": {
+      "intervalo_minutos": 60,
+      "api_key": "",
+      "afiliado_id": ""
+    },
+    "google_flight": {
+      "intervalo_minutos": 60,
+      "api_key": ""
+    },
+    "kiwi_tequila": {
+      "intervalo_minutos": 60,
+      "api_key": ""
+    },
+    "serpapi_flights": {
+      "intervalo_minutos": 60,
+      "api_key": "ef923504e83d24d7de3bfb613c70689fcb560b539aedc6f363cec77f6a4ce7c9"
+    },
+    "skyscanner": {
+      "intervalo_minutos": 60,
+      "api_key": "",
+      "host": ""
+    }
+  },
+  "output": {
+    "telegram": {
+      "bot_token": "",
+      "chat_id": "",
+      "estilo": ""
+    },
+    "terminal": {},
+    "whatsapp": {
+      "numero": "",
+      "token": ""
+    },
+    "markdown_export": {
+      "nome_arquivo": "ofertas.md"
+    }
+  },
+  "output_ativas": [
+    "markdown_export",
+    "terminal"
+  ],
+  "input_ativas": [
+    "serpapi_flights"
+  ],
+  "ordem_inputs": [
+    "aviasales",
+    "serpapi_flights",
+    "decolar",
+    "google_flight",
+    "kiwi_tequila",
+    "skyscanner"
+  ],
+  "ordem_outputs": [
+    "markdown_export",
+    "terminal",
+    "telegram",
+    "whatsapp"
+  ]
+}

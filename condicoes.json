@@ -1,0 +1,14 @@
+{
+  "origem": "OPO",
+  "destino": "GIG",
+  "tipo_viagem": "ida",
+  "mes": "12",
+  "ano": "2026",
+  "data_ida": "27/12/2026",
+  "data_volta": "",
+  "valor_minimo": "1000.00",
+  "valor_maximo": "9000.00",
+  "moeda": "BRL",
+  "observacoes": "",
+  "apenas_menor_preco": false
+}

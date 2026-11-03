@@ -1,0 +1,187 @@
+[2026-09-17 14:40:59] [INFO] [log] Log limpo pelo usuário.
+[2026-09-17 14:41:01] [INFO] [buscador] Robô parado pelo usuário.
+[2026-09-17 14:41:01] [INFO] [buscador] Loop do robô encerrado.
+[2026-09-17 15:10:13] [INFO] [apis] Módulo carregado: aviasales.py
+[2026-09-17 15:10:13] [INFO] [apis] Módulo carregado: decolar.py
+[2026-09-17 15:10:13] [INFO] [apis] Módulo carregado: google_flight.py
+[2026-09-17 15:10:13] [INFO] [apis] Módulo carregado: kiwi_tequila.py
+[2026-09-17 15:10:13] [INFO] [apis] Módulo carregado: serpapi_flights.py
+[2026-09-17 15:10:13] [INFO] [apis] Módulo carregado: skyscanner.py
+[2026-09-17 15:10:13] [INFO] [apis] Módulo carregado: markdown_export.py
+[2026-09-17 15:10:13] [INFO] [apis] Módulo carregado: telegram.py
+[2026-09-17 15:10:13] [INFO] [apis] Módulo carregado: terminal.py
+[2026-09-17 15:10:13] [INFO] [apis] Módulo carregado: whatsapp.py
+[2026-09-17 15:10:15] [INFO] [interface] Interface iniciada.
+[2026-09-17 15:11:12] [SUCESSO] [interface] Condições salvas: Orig=LIS, OPO | Dest=GIG, GRU,  | Tipo=ida | Mês=12 | Ano=2026 | Ida=27/12/2026 | Min=1000.00 | Max=8000.00
+[2026-09-17 15:11:13] [SUCESSO] [interface] Inputs salvos. APIs ativas: Google Flights (SerpApi)
+[2026-09-17 15:11:13] [SUCESSO] [interface] Condições salvas: Orig=LIS, OPO | Dest=GIG, GRU,  | Tipo=ida | Mês=12 | Ano=2026 | Ida=27/12/2026 | Min=1000.00 | Max=8000.00
+[2026-09-17 15:11:13] [SUCESSO] [interface] Retornos salvos. Saídas ativas: Exportar Markdown
+[2026-09-17 15:11:13] [SUCESSO] [buscador] Robô iniciado.
+[2026-09-17 15:11:13] [INFO] [apis] Módulo carregado: aviasales.py
+[2026-09-17 15:11:13] [INFO] [apis] Módulo carregado: decolar.py
+[2026-09-17 15:11:13] [INFO] [apis] Módulo carregado: google_flight.py
+[2026-09-17 15:11:13] [INFO] [apis] Módulo carregado: kiwi_tequila.py
+[2026-09-17 15:11:13] [INFO] [apis] Módulo carregado: serpapi_flights.py
+[2026-09-17 15:11:13] [INFO] [apis] Módulo carregado: skyscanner.py
+[2026-09-17 15:11:13] [INFO] [apis] Módulo carregado: markdown_export.py
+[2026-09-17 15:11:13] [INFO] [apis] Módulo carregado: telegram.py
+[2026-09-17 15:11:13] [INFO] [apis] Módulo carregado: terminal.py
+[2026-09-17 15:11:13] [INFO] [apis] Módulo carregado: whatsapp.py
+[2026-09-17 15:11:13] [INFO] [buscador] Iniciando novo ciclo de consultas.
+[2026-09-17 15:11:15] [INFO] [buscador] Google Flights (SerpApi): 41 voo(s) retornado(s) em 1.55s.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'LIS', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 4806.0, 'moeda': 'BRL', 'companhia': 'Azul', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GIG%20from%20LIS%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 30}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem LIS->GIG salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'LIS', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 7503.0, 'moeda': 'BRL', 'companhia': 'Tap Air Portugal', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GIG%20from%20LIS%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 0}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem LIS->GIG salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'LIS', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 4740.0, 'moeda': 'BRL', 'companhia': 'Tap Air Portugal', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GIG%20from%20LIS%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 30}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem LIS->GIG salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'LIS', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 5970.0, 'moeda': 'BRL', 'companhia': 'Tap Air Portugal', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GIG%20from%20LIS%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 12}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem LIS->GIG salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'LIS', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 5995.0, 'moeda': 'BRL', 'companhia': 'Tap Air Portugal', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GIG%20from%20LIS%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 11}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem LIS->GIG salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'LIS', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 6396.0, 'moeda': 'BRL', 'companhia': 'Tap Air Portugal', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GIG%20from%20LIS%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 5}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem LIS->GIG salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'LIS', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 6568.0, 'moeda': 'BRL', 'companhia': 'Tap Air Portugal', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GIG%20from%20LIS%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 2}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem LIS->GIG salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'LIS', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 6659.0, 'moeda': 'BRL', 'companhia': 'Air Europa', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GIG%20from%20LIS%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 1}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem LIS->GIG salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'LIS', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 7793.0, 'moeda': 'BRL', 'companhia': 'LATAM', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GIG%20from%20LIS%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 0}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem LIS->GIG salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'LIS', 'destino': 'GRU', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 3593.0, 'moeda': 'BRL', 'companhia': 'Tap Air Portugal', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GRU%20from%20LIS%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 38}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem LIS->GRU salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'LIS', 'destino': 'GRU', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 4764.0, 'moeda': 'BRL', 'companhia': 'Tap Air Portugal', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GRU%20from%20LIS%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 15}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem LIS->GRU salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'LIS', 'destino': 'GRU', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 4573.0, 'moeda': 'BRL', 'companhia': 'Royal Air Maroc', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GRU%20from%20LIS%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 18}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem LIS->GRU salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'LIS', 'destino': 'GRU', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 5004.0, 'moeda': 'BRL', 'companhia': 'Tap Air Portugal', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GRU%20from%20LIS%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 10}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem LIS->GRU salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'LIS', 'destino': 'GRU', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 5227.0, 'moeda': 'BRL', 'companhia': 'Iberia', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GRU%20from%20LIS%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 5}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem LIS->GRU salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'LIS', 'destino': 'GRU', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 6137.0, 'moeda': 'BRL', 'companhia': 'LATAM', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GRU%20from%20LIS%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 0}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem LIS->GRU salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 7226.0, 'moeda': 'BRL', 'companhia': 'KLM', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GIG%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 2}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem OPO->GIG salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 7259.0, 'moeda': 'BRL', 'companhia': 'Air France', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GIG%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 2}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem OPO->GIG salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 7596.0, 'moeda': 'BRL', 'companhia': 'Tap Air Portugal', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GIG%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 0}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem OPO->GIG salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 7607.0, 'moeda': 'BRL', 'companhia': 'Iberia', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GIG%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 0}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem OPO->GIG salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 6063.0, 'moeda': 'BRL', 'companhia': 'Tap Air Portugal', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GIG%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 18}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem OPO->GIG salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 6489.0, 'moeda': 'BRL', 'companhia': 'Tap Air Portugal', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GIG%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 12}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem OPO->GIG salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 6499.0, 'moeda': 'BRL', 'companhia': 'Air Europa', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GIG%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 11}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem OPO->GIG salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 6661.0, 'moeda': 'BRL', 'companhia': 'Tap Air Portugal', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GIG%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 9}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem OPO->GIG salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 6785.0, 'moeda': 'BRL', 'companhia': 'Iberia', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GIG%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 7}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem OPO->GIG salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 6789.0, 'moeda': 'BRL', 'companhia': 'KLM', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GIG%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 7}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem OPO->GIG salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 6789.0, 'moeda': 'BRL', 'companhia': 'Air France', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GIG%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 7}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem OPO->GIG salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GRU', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 4318.0, 'moeda': 'BRL', 'companhia': 'Air Europa', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GRU%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 25}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem OPO->GRU salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GRU', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 4596.0, 'moeda': 'BRL', 'companhia': 'Iberia', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GRU%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 19}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem OPO->GRU salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GRU', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 4608.0, 'moeda': 'BRL', 'companhia': 'Tap Air Portugal', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GRU%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 19}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem OPO->GRU salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GRU', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 4274.0, 'moeda': 'BRL', 'companhia': 'Royal Air Maroc', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GRU%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 24}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem OPO->GRU salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GRU', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 5344.0, 'moeda': 'BRL', 'companhia': 'Lufthansa', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GRU%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 3}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem OPO->GRU salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GRU', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 6349.0, 'moeda': 'BRL', 'companhia': 'Lufthansa', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GRU%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 0}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem OPO->GRU salva em ofertas.md.
+[2026-09-17 15:11:15] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GRU', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 6390.0, 'moeda': 'BRL', 'companhia': 'Lufthansa', 'link': 'https://www.google.com/travel/flights?q=Flights%20to%20GRU%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 0}
+[2026-09-17 15:11:15] [SUCESSO] [Exportar Markdown] Passagem OPO->GRU salva em ofertas.md.
+[2026-09-17 15:11:15] [INFO] [buscador] Ciclo finalizado. Próxima consulta em 60s.
+[2026-09-17 15:11:45] [INFO] [buscador] Robô parado pelo usuário.
+[2026-09-17 15:11:45] [INFO] [buscador] Loop do robô encerrado.
+[2026-09-17 16:35:12] [INFO] [apis] Módulo carregado: aviasales.py
+[2026-09-17 16:35:12] [INFO] [apis] Módulo carregado: decolar.py
+[2026-09-17 16:35:12] [INFO] [apis] Módulo carregado: google_flight.py
+[2026-09-17 16:35:12] [INFO] [apis] Módulo carregado: kiwi_tequila.py
+[2026-09-17 16:35:12] [INFO] [apis] Módulo carregado: serpapi_flights.py
+[2026-09-17 16:35:12] [INFO] [apis] Módulo carregado: skyscanner.py
+[2026-09-17 16:35:12] [INFO] [apis] Módulo carregado: markdown_export.py
+[2026-09-17 16:35:12] [INFO] [apis] Módulo carregado: telegram.py
+[2026-09-17 16:35:12] [INFO] [apis] Módulo carregado: terminal.py
+[2026-09-17 16:35:12] [INFO] [apis] Módulo carregado: whatsapp.py
+[2026-09-17 16:35:20] [INFO] [interface] Interface iniciada.
+[2026-09-17 16:36:06] [SUCESSO] [interface] Condições salvas: Orig=OPO | Dest=GIG | Tipo=ida | Mês=12 | Ano=2026 | Ida=27/12/2026 | Min=1000.00 | Max=9000.00
+[2026-09-17 16:36:43] [SUCESSO] [interface] Retornos salvos. Saídas ativas: Exportar Markdown
+[2026-09-17 16:36:45] [SUCESSO] [interface] Inputs salvos. APIs ativas: Google Flights (SerpApi)
+[2026-09-17 16:36:45] [SUCESSO] [interface] Condições salvas: Orig=OPO | Dest=GIG | Tipo=ida | Mês=12 | Ano=2026 | Ida=27/12/2026 | Min=1000.00 | Max=9000.00
+[2026-09-17 16:36:45] [SUCESSO] [interface] Retornos salvos. Saídas ativas: Exportar Markdown
+[2026-09-17 16:36:45] [SUCESSO] [buscador] Robô iniciado.
+[2026-09-17 16:36:45] [INFO] [apis] Módulo carregado: aviasales.py
+[2026-09-17 16:36:45] [INFO] [apis] Módulo carregado: decolar.py
+[2026-09-17 16:36:45] [INFO] [apis] Módulo carregado: google_flight.py
+[2026-09-17 16:36:45] [INFO] [apis] Módulo carregado: kiwi_tequila.py
+[2026-09-17 16:36:45] [INFO] [apis] Módulo carregado: serpapi_flights.py
+[2026-09-17 16:36:45] [INFO] [apis] Módulo carregado: skyscanner.py
+[2026-09-17 16:36:45] [INFO] [apis] Módulo carregado: markdown_export.py
+[2026-09-17 16:36:45] [INFO] [apis] Módulo carregado: telegram.py
+[2026-09-17 16:36:45] [INFO] [apis] Módulo carregado: terminal.py
+[2026-09-17 16:36:45] [INFO] [apis] Módulo carregado: whatsapp.py
+[2026-09-17 16:36:45] [INFO] [buscador] Iniciando novo ciclo de consultas.
+[2026-09-17 16:36:51] [INFO] [buscador] Google Flights (SerpApi): 12 voo(s) retornado(s) em 5.26s.
+[2026-09-17 16:36:51] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 7208.0, 'moeda': 'BRL', 'companhia': 'KLM', 'link': 'https://www.google.com/travel/flights?q=One%20way%20flights%20to%20GIG%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 1}
+[2026-09-17 16:36:51] [SUCESSO] [Exportar Markdown] Oferta visual OPO->GIG anexada ao log.
+[2026-09-17 16:36:51] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 7246.0, 'moeda': 'BRL', 'companhia': 'Air France', 'link': 'https://www.google.com/travel/flights?q=One%20way%20flights%20to%20GIG%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 1}
+[2026-09-17 16:36:51] [SUCESSO] [Exportar Markdown] Oferta visual OPO->GIG anexada ao log.
+[2026-09-17 16:36:51] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 7576.0, 'moeda': 'BRL', 'companhia': 'Tap Air Portugal', 'link': 'https://www.google.com/travel/flights?q=One%20way%20flights%20to%20GIG%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 0}
+[2026-09-17 16:36:51] [SUCESSO] [Exportar Markdown] Oferta visual OPO->GIG anexada ao log.
+[2026-09-17 16:36:51] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 7587.0, 'moeda': 'BRL', 'companhia': 'Iberia', 'link': 'https://www.google.com/travel/flights?q=One%20way%20flights%20to%20GIG%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 0}
+[2026-09-17 16:36:51] [SUCESSO] [Exportar Markdown] Oferta visual OPO->GIG anexada ao log.
+[2026-09-17 16:36:51] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 6048.0, 'moeda': 'BRL', 'companhia': 'Tap Air Portugal', 'link': 'https://www.google.com/travel/flights?q=One%20way%20flights%20to%20GIG%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 17}
+[2026-09-17 16:36:51] [SUCESSO] [Exportar Markdown] Oferta visual OPO->GIG anexada ao log.
+[2026-09-17 16:36:51] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 6213.0, 'moeda': 'BRL', 'companhia': 'Air Europa', 'link': 'https://www.google.com/travel/flights?q=One%20way%20flights%20to%20GIG%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 15}
+[2026-09-17 16:36:51] [SUCESSO] [Exportar Markdown] Oferta visual OPO->GIG anexada ao log.
+[2026-09-17 16:36:51] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 6472.0, 'moeda': 'BRL', 'companhia': 'Tap Air Portugal', 'link': 'https://www.google.com/travel/flights?q=One%20way%20flights%20to%20GIG%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 11}
+[2026-09-17 16:36:51] [SUCESSO] [Exportar Markdown] Oferta visual OPO->GIG anexada ao log.
+[2026-09-17 16:36:51] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 6767.0, 'moeda': 'BRL', 'companhia': 'Iberia', 'link': 'https://www.google.com/travel/flights?q=One%20way%20flights%20to%20GIG%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 7}
+[2026-09-17 16:36:51] [SUCESSO] [Exportar Markdown] Oferta visual OPO->GIG anexada ao log.
+[2026-09-17 16:36:51] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 6771.0, 'moeda': 'BRL', 'companhia': 'KLM', 'link': 'https://www.google.com/travel/flights?q=One%20way%20flights%20to%20GIG%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 6}
+[2026-09-17 16:36:51] [SUCESSO] [Exportar Markdown] Oferta visual OPO->GIG anexada ao log.
+[2026-09-17 16:36:51] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 6801.0, 'moeda': 'BRL', 'companhia': 'Air France', 'link': 'https://www.google.com/travel/flights?q=One%20way%20flights%20to%20GIG%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 6}
+[2026-09-17 16:36:51] [SUCESSO] [Exportar Markdown] Oferta visual OPO->GIG anexada ao log.
+[2026-09-17 16:36:51] [SUCESSO] [buscador] Passagem bateu com as condições: {'origem': 'OPO', 'destino': 'GIG', 'tipo_viagem': 'ida', 'data_ida': '27/12/2026', 'data_volta': '', 'valor': 8780.0, 'moeda': 'BRL', 'companhia': 'Tap Air Portugal', 'link': 'https://www.google.com/travel/flights?q=One%20way%20flights%20to%20GIG%20from%20OPO%20on%202026-12-27', 'fonte': 'Google Flights (SerpApi)', 'score': 0}
+[2026-09-17 16:36:51] [SUCESSO] [Exportar Markdown] Oferta visual OPO->GIG anexada ao log.
+[2026-09-17 16:36:51] [INFO] [buscador] Ciclo finalizado. Próxima consulta em 60s.
+[2026-09-17 16:37:06] [INFO] [buscador] Robô parado pelo usuário.
+[2026-09-17 16:37:06] [INFO] [buscador] Loop do robô encerrado.
+[2026-09-17 16:55:12] [INFO] [apis] Módulo carregado: aviasales.py
+[2026-09-17 16:55:12] [INFO] [apis] Módulo carregado: decolar.py
+[2026-09-17 16:55:12] [INFO] [apis] Módulo carregado: google_flight.py
+[2026-09-17 16:55:12] [INFO] [apis] Módulo carregado: kiwi_tequila.py
+[2026-09-17 16:55:12] [INFO] [apis] Módulo carregado: serpapi_flights.py
+[2026-09-17 16:55:12] [INFO] [apis] Módulo carregado: skyscanner.py
+[2026-09-17 16:55:12] [INFO] [apis] Módulo carregado: markdown_export.py
+[2026-09-17 16:55:12] [INFO] [apis] Módulo carregado: telegram.py
+[2026-09-17 16:55:12] [INFO] [apis] Módulo carregado: terminal.py
+[2026-09-17 16:55:12] [INFO] [apis] Módulo carregado: whatsapp.py
+[2026-09-17 16:55:14] [INFO] [interface] Interface iniciada.
+[2026-09-17 16:58:00] [INFO] [apis] Módulo carregado: aviasales.py
+[2026-09-17 16:58:00] [INFO] [apis] Módulo carregado: decolar.py
+[2026-09-17 16:58:00] [INFO] [apis] Módulo carregado: google_flight.py
+[2026-09-17 16:58:00] [INFO] [apis] Módulo carregado: kiwi_tequila.py
+[2026-09-17 16:58:00] [INFO] [apis] Módulo carregado: serpapi_flights.py
+[2026-09-17 16:58:00] [INFO] [apis] Módulo carregado: skyscanner.py
+[2026-09-17 16:58:00] [INFO] [apis] Módulo carregado: markdown_export.py
+[2026-09-17 16:58:00] [INFO] [apis] Módulo carregado: telegram.py
+[2026-09-17 16:58:00] [INFO] [apis] Módulo carregado: terminal.py
+[2026-09-17 16:58:00] [INFO] [apis] Módulo carregado: whatsapp.py
+[2026-09-17 16:58:02] [INFO] [interface] Interface iniciada.
+[2026-09-17 16:58:36] [INFO] [apis] Módulo carregado: aviasales.py
+[2026-09-17 16:58:36] [INFO] [apis] Módulo carregado: decolar.py
+[2026-09-17 16:58:36] [INFO] [apis] Módulo carregado: google_flight.py
+[2026-09-17 16:58:36] [INFO] [apis] Módulo carregado: kiwi_tequila.py
+[2026-09-17 16:58:36] [INFO] [apis] Módulo carregado: serpapi_flights.py
+[2026-09-17 16:58:36] [INFO] [apis] Módulo carregado: skyscanner.py
+[2026-09-17 16:58:36] [INFO] [apis] Módulo carregado: markdown_export.py
+[2026-09-17 16:58:36] [INFO] [apis] Módulo carregado: telegram.py
+[2026-09-17 16:58:36] [INFO] [apis] Módulo carregado: terminal.py
+[2026-09-17 16:58:36] [INFO] [apis] Módulo carregado: whatsapp.py
+[2026-09-17 16:58:38] [INFO] [interface] Interface iniciada.

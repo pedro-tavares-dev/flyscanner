@@ -1,0 +1,10 @@
+Montei o projeto completo exatamente na estrutura que você descreveu. Resumo do que está em cada peça:
+
+interface.py — a UI (CustomTkinter). Janela "FlyScanner" com as 3 abas (Adicionar Inputs, Condições, Retorno), botão Rodar/Parar Robô, uma caixa de "terminal" já embutida mostrando as passagens encontradas; e uma segunda janela de Log em tempo real.
+apis.py — carrega dinamicamente qualquer arquivo .py que você jogar em apis_input/ ou apis_output/, desde que siga o "contrato" (variáveis NOME, CAMPOS_CONFIG e função buscar()/enviar()). É por isso que a interface já gera os campos de configuração sozinha, sem precisar mexer em código.
+condicoes.py — salva os filtros em condicoes.json e tem passagem_atende(), a função que decide se um voo bate com o que você configurou (tudo opcional, como você descreveu).
+log.py — log central em arquivo + fila em tempo real, usado tanto pela janela de Log quanto pela caixa de "terminal" da janela principal.
+buscador.py — o robô, roda em thread separada, faz o ciclo: consulta inputs → filtra com condições → dispara nos outputs → loga cada passo (erro de api, chave errada, tempo de consulta etc).
+apis_input/google_flight.py — implementado em modo simulado (o Google não tem API pública oficial de preços), já retornando voos falsos no formato certo pra validar o fluxo inteiro. skyscanner.py e decolar.py ficaram como esqueletos prontos pra você preencher.
+apis_output/terminal.py — implementado de verdade (joga no log/terminal). telegram.py e whatsapp.py ficaram como esqueletos.
+Testei o fluxo completo (sem GUI, já que este ambiente é headless) rodando busca → filtro → envio, e funcionou certinho. Rode localmente com pip install customtkinter && python interface.py.s

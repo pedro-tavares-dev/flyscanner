@@ -1,0 +1,2804 @@
+# FlyScanner
+
+## Sistema pessoal de monitoramento e descoberta de passagens aéreas
+
+**Linguagem:** Python
+**Interface:** CustomTkinter
+**Arquitetura:** modular, orientada a plugins por arquivos
+**Execução inicial:** aplicação desktop local
+**Saídas iniciais:** Terminal interno da aplicação
+**Entradas iniciais:** Google Flights
+**Objetivo:** consultar fontes de passagens aéreas, aplicar condições configuradas pelo usuário e encaminhar somente resultados relevantes para os canais de saída habilitados.
+
+---
+
+# 1. Visão geral
+
+O **FlyScanner** é uma aplicação desktop desenvolvida em Python para monitoramento de preços e descoberta de passagens aéreas.
+
+O sistema possui três responsabilidades fundamentais:
+
+1. **Consultar APIs/fontes de entrada de passagens**
+2. **Filtrar os resultados de acordo com condições definidas pelo usuário**
+3. **Enviar os resultados aprovados para um ou mais canais de saída**
+
+A aplicação deve funcionar continuamente enquanto o robô estiver ativo.
+
+O usuário não precisa alterar o código-fonte para modificar uma busca. As configurações devem ser realizadas pela interface gráfica.
+
+A arquitetura deve permitir adicionar novas fontes de entrada e novos canais de saída simplesmente criando um novo arquivo dentro da pasta correspondente.
+
+---
+
+# 2. Princípio arquitetural
+
+O projeto segue o seguinte fluxo:
+
+```text
+┌─────────────────────┐
+│     INTERFACE       │
+│    interface.py     │
+└──────────┬──────────┘
+           │
+           │ configurações
+           ▼
+┌─────────────────────┐
+│       BUSCADOR      │
+│     buscador.py     │
+└──────────┬──────────┘
+           │
+           │ consulta
+           ▼
+┌─────────────────────┐
+│       APIS.PY       │
+│   Gerenciador/API   │
+└───────┬─────────┬───┘
+        │         │
+        ▼         ▼
+   INPUTS       CONDIÇÕES
+ APIs aéreas    condicoes.py
+        │         │
+        └────┬────┘
+             │
+             │ resultado aprovado
+             ▼
+       APIS DE OUTPUT
+             │
+             ▼
+       terminal.py
+       telegram.py
+       whatsapp.py
+       etc.
+             
+             +
+             
+           LOG.PY
+             │
+             ▼
+      Janela de Logs
+```
+
+O princípio central é:
+
+> **Interface configura. Buscador executa. APIs conectam. Condições filtram. Outputs entregam. Log registra.**
+
+Cada componente deve possuir uma responsabilidade clara.
+
+---
+
+# 3. Estrutura oficial do projeto
+
+A estrutura inicial é:
+
+```text
+C:\Scripts\flyscanner
+│
+│   apis.py
+│   buscador.py
+│   condicoes.py
+│   interface.py
+│   log.py
+│
+├───apis_input
+│       google_flight.py
+│       skyscanner.py
+│       decolar.py
+│       etc...
+│
+└───apis_output
+        terminal.py
+        telegram.py
+        whatsapp.py
+```
+
+Essa estrutura deve ser mantida como padrão do projeto.
+
+Novas integrações devem ser adicionadas nas pastas correspondentes, evitando espalhar arquivos pela raiz.
+
+---
+
+# 4. Responsabilidade de cada arquivo
+
+## 4.1 `interface.py`
+
+É a camada gráfica principal.
+
+Responsabilidades:
+
+* iniciar a aplicação;
+* criar a janela principal;
+* criar as duas janelas/seções principais;
+* apresentar configurações;
+* detectar APIs disponíveis;
+* apresentar formulários específicos das APIs;
+* permitir configurar condições;
+* permitir configurar outputs;
+* iniciar o robô;
+* parar o robô;
+* mostrar estado atual do robô;
+* encaminhar mensagens/logs para `log.py`.
+
+`interface.py` **não deve realizar consultas diretamente às APIs**.
+
+Não deve conter lógica específica de Google Flights, Telegram, Skyscanner etc.
+
+A interface apenas coleta/configura informações e delega a execução aos módulos responsáveis.
+
+---
+
+# 5. Janela 1 — Buscar Passagens
+
+A primeira janela será denominada:
+
+**Buscar Passagens**
+
+Ela possuirá três tópicos principais:
+
+```text
+BUSCAR PASSAGENS
+
+1. APIs de Entrada
+2. Condições
+3. Retorno
+```
+
+Além dos tópicos, deverá possuir controles gerais:
+
+```text
+[ RODAR ROBÔ ]
+
+[ PARAR ROBÔ ]
+
+Status: PARADO
+```
+
+---
+
+# 6. Tópico 1 — APIs de Entrada
+
+Este tópico representa as fontes utilizadas pelo FlyScanner para obter informações de voos.
+
+Exemplo inicial:
+
+```text
+Google Flights
+```
+
+Futuramente:
+
+```text
+Google Flights
+Skyscanner
+Decolar
+Kayak
+Amadeus
+Duffel
+outras fontes
+```
+
+A interface **não deve possuir uma lista fixa codificada manualmente**.
+
+Ela deve consultar:
+
+```text
+C:\Scripts\flyscanner\apis_input
+```
+
+e identificar os arquivos `.py`.
+
+Exemplo:
+
+```text
+apis_input/
+    google_flight.py
+    skyscanner.py
+    decolar.py
+```
+
+A interface deve interpretar:
+
+```text
+google_flight.py
+```
+
+como:
+
+```text
+Google Flight
+```
+
+e disponibilizá-lo como uma opção configurável.
+
+---
+
+# 7. Descoberta automática das APIs
+
+O sistema deve utilizar descoberta dinâmica.
+
+Conceitualmente:
+
+```python
+from pathlib import Path
+
+PASTA_INPUT = Path(__file__).parent / "apis_input"
+
+arquivos = PASTA_INPUT.glob("*.py")
+```
+
+O sistema deve ignorar:
+
+```text
+__init__.py
+```
+
+caso esse arquivo venha a existir.
+
+A ideia é:
+
+> Criou um novo arquivo de API → colocou na pasta → o FlyScanner passa a enxergá-lo.
+
+Não deve ser necessário alterar `interface.py` toda vez que uma nova API for adicionada.
+
+---
+
+# 8. Configuração de cada API
+
+Cada API de entrada pode possuir configurações próprias.
+
+Exemplo:
+
+```text
+Google Flights
+
+API:
+[ Google Flights ]
+
+Chave/API Key:
+[____________________________]
+
+Token:
+[____________________________]
+
+URL:
+[____________________________]
+
+Intervalo de consulta:
+[ 30 minutos ]
+
+Outras configurações:
+[____________________________]
+
+[ SALVAR CONFIGURAÇÃO ]
+```
+
+Outra API poderá possuir campos completamente diferentes.
+
+Por isso, a interface deve permitir que cada módulo declare quais configurações necessita.
+
+Exemplo conceitual:
+
+```python
+CONFIG_FIELDS = [
+    "api_key",
+    "token",
+    "endpoint",
+    "timeout"
+]
+```
+
+Uma API diferente poderia declarar:
+
+```python
+CONFIG_FIELDS = [
+    "api_key",
+    "affiliate_id",
+    "currency"
+]
+```
+
+O `interface.py` deverá construir os campos dinamicamente.
+
+---
+
+# 9. Regra importante sobre credenciais
+
+Chaves, tokens e credenciais **não devem ser colocados diretamente dentro dos arquivos Python das APIs**.
+
+Errado:
+
+```python
+API_KEY = "123456789"
+```
+
+A configuração deve vir da aplicação.
+
+O arquivo:
+
+```text
+google_flight.py
+```
+
+deve conter a implementação da integração, enquanto as credenciais devem ser fornecidas pelo sistema de configuração.
+
+Isso permite trocar credenciais sem modificar o código.
+
+---
+
+# 10. Tópico 2 — Condições
+
+O segundo tópico contém os filtros da busca.
+
+As condições são **opcionais**.
+
+Isso significa que um campo vazio não deve restringir a pesquisa.
+
+Exemplo:
+
+```text
+Origem:
+[ Rio de Janeiro ]
+
+Destino:
+[ ]
+
+Mês:
+[ ]
+
+Ano:
+[ ]
+
+Tipo:
+[ ]
+
+Preço mínimo:
+[ ]
+
+Preço máximo:
+[ ]
+```
+
+Nesse caso, somente a origem restringe a pesquisa.
+
+---
+
+# 11. Conceito fundamental das condições
+
+As condições funcionam como um filtro lógico.
+
+Exemplo:
+
+```text
+Origem = Rio de Janeiro
+```
+
+significa:
+
+```text
+ACEITAR qualquer resultado cuja origem corresponda
+a Rio de Janeiro.
+```
+
+Não significa:
+
+```text
+procurar somente uma passagem específica.
+```
+
+Portanto, quanto menos condições forem preenchidas, mais abrangente será a busca.
+
+---
+
+# 12. Exemplo de filtro amplo
+
+Configuração:
+
+```text
+Origem:
+Rio de Janeiro
+
+Destino:
+vazio
+
+Data:
+vazio
+
+Preço:
+vazio
+```
+
+Resultado:
+
+```text
+Rio de Janeiro → São Paulo
+Rio de Janeiro → Lisboa
+Rio de Janeiro → Nova York
+Rio de Janeiro → Buenos Aires
+Rio de Janeiro → Santiago
+...
+```
+
+O robô deve encaminhar os resultados que correspondem à condição.
+
+---
+
+# 13. Exemplo de filtro específico
+
+Configuração:
+
+```text
+Origem:
+Rio de Janeiro
+
+Destino:
+Lisboa
+
+Mês:
+Dezembro
+
+Ano:
+2026
+
+Tipo:
+Ida e volta
+
+Preço máximo:
+R$ 3.000
+```
+
+O resultado somente será considerado válido se satisfizer todas as condições preenchidas.
+
+Formalmente:
+
+```text
+origem == Rio de Janeiro
+AND
+destino == Lisboa
+AND
+mês == dezembro
+AND
+ano == 2026
+AND
+tipo == ida_e_volta
+AND
+preço <= 3000
+```
+
+Se qualquer condição obrigatória configurada não for satisfeita:
+
+```text
+resultado = REJEITADO
+```
+
+Se todas forem satisfeitas:
+
+```text
+resultado = APROVADO
+```
+
+---
+
+# 14. Campos previstos para Condições
+
+A implementação inicial deve permitir:
+
+### Origem
+
+Exemplos:
+
+```text
+Rio de Janeiro
+São Paulo
+GIG
+GRU
+```
+
+### Destino
+
+Exemplos:
+
+```text
+Lisboa
+Portugal
+LIS
+```
+
+### Tipo de viagem
+
+```text
+Qualquer
+Somente ida
+Ida e volta
+```
+
+### Data
+
+Possibilidades futuras:
+
+```text
+Data específica
+Data inicial
+Data final
+```
+
+### Mês
+
+```text
+Janeiro
+Fevereiro
+...
+Dezembro
+```
+
+### Ano
+
+```text
+2026
+2027
+2028
+...
+```
+
+### Preço mínimo
+
+Opcional.
+
+### Preço máximo
+
+Opcional.
+
+### Moeda
+
+Inicialmente:
+
+```text
+BRL
+```
+
+Futuramente:
+
+```text
+BRL
+USD
+EUR
+GBP
+...
+```
+
+---
+
+# 15. Salvar condições
+
+O botão:
+
+```text
+[ SALVAR ]
+```
+
+deve validar os campos e armazenar a configuração atual.
+
+A função de armazenamento pertence conceitualmente ao módulo:
+
+```text
+condicoes.py
+```
+
+Entretanto, o arquivo `condicoes.py` deve ser entendido como **módulo responsável pelo modelo, validação e manipulação das condições**, e não como um arquivo Python que será fisicamente reescrito toda vez que o usuário clicar em "Salvar".
+
+A configuração persistente deverá futuramente ser armazenada em um formato apropriado, como:
+
+```text
+JSON
+```
+
+ou outro armazenamento local.
+
+Exemplo conceitual:
+
+```json
+{
+    "origin": "Rio de Janeiro",
+    "destination": "Lisboa",
+    "trip_type": "round_trip",
+    "month": 12,
+    "year": 2026,
+    "min_price": null,
+    "max_price": 3000
+}
+```
+
+O código continua em:
+
+```text
+condicoes.py
+```
+
+e os dados ficam separados do código.
+
+Isso evita que a aplicação modifique o próprio código-fonte.
+
+---
+
+# 16. Tópico 3 — Retorno
+
+O terceiro tópico determina para onde os resultados aprovados serão enviados.
+
+Inicialmente:
+
+```text
+Terminal
+```
+
+Futuramente:
+
+```text
+Terminal
+Telegram
+WhatsApp
+Email
+Web
+Blog
+Discord
+etc.
+```
+
+Assim como ocorre com APIs de entrada, a interface deve descobrir automaticamente os arquivos presentes em:
+
+```text
+C:\Scripts\flyscanner\apis_output
+```
+
+Exemplo:
+
+```text
+apis_output/
+    terminal.py
+    telegram.py
+    whatsapp.py
+```
+
+A interface deverá apresentar:
+
+```text
+Retornos disponíveis:
+
+☑ Terminal
+☐ Telegram
+☐ WhatsApp
+```
+
+---
+
+# 17. Arquivos de Output
+
+Cada arquivo da pasta `apis_output` representa um canal de saída.
+
+Exemplo:
+
+```text
+terminal.py
+```
+
+é responsável pelo output no terminal/interface.
+
+No futuro:
+
+```text
+telegram.py
+```
+
+será responsável por:
+
+* token do bot;
+* chat ID;
+* conexão;
+* envio da mensagem;
+* tratamento de erro.
+
+A interface não deve implementar a lógica do Telegram.
+
+Ela apenas configura e ativa o módulo.
+
+---
+
+# 18. Formato normalizado dos resultados
+
+Todas as APIs de entrada podem retornar informações em formatos diferentes.
+
+Por isso, `apis.py` deverá funcionar como camada de normalização.
+
+Por exemplo, uma API pode retornar:
+
+```python
+{
+    "from": "GIG",
+    "to": "LIS",
+    "price": 2850
+}
+```
+
+Outra pode retornar:
+
+```python
+{
+    "origin": "Rio de Janeiro",
+    "destination": "Lisbon",
+    "amount": 2850.00
+}
+```
+
+O restante do sistema não deve precisar conhecer essas diferenças.
+
+O resultado deve ser convertido para um formato interno padronizado.
+
+Exemplo:
+
+```python
+flight = {
+    "origin": "GIG",
+    "destination": "LIS",
+    "departure": "...",
+    "return": "...",
+    "price": 2850.00,
+    "currency": "BRL",
+    "airline": "...",
+    "stops": 0,
+    "source": "Google Flights",
+    "url": "..."
+}
+```
+
+Esse objeto passa a ser o contrato entre:
+
+```text
+API → Condições → Output
+```
+
+---
+
+# 19. `apis.py`
+
+`apis.py` é o **gerenciador das integrações**.
+
+Ele não deve conter a implementação específica de cada API.
+
+Sua responsabilidade é:
+
+1. descobrir APIs disponíveis;
+2. carregar os módulos;
+3. validar se possuem a estrutura esperada;
+4. inicializar configurações;
+5. executar consultas;
+6. normalizar resultados;
+7. encaminhar erros;
+8. entregar resultados ao `buscador.py`.
+
+Fluxo:
+
+```text
+buscador.py
+     ↓
+   apis.py
+     ↓
+google_flight.py
+     ↓
+resultado bruto
+     ↓
+apis.py
+     ↓
+resultado normalizado
+     ↓
+buscador.py
+```
+
+---
+
+# 20. Contrato das APIs de entrada
+
+Toda API adicionada ao diretório:
+
+```text
+apis_input
+```
+
+deve seguir um contrato mínimo.
+
+Conceitualmente:
+
+```python
+class FlightAPI:
+
+    name = "Google Flights"
+
+    def configure(self, config):
+        pass
+
+    def search(self, conditions):
+        pass
+
+    def test_connection(self):
+        pass
+```
+
+O nome exato da implementação poderá mudar durante o desenvolvimento, mas o princípio deve ser preservado.
+
+Uma API precisa informar ao sistema:
+
+* nome;
+* configurações necessárias;
+* capacidade de testar conexão;
+* método de consulta;
+* resultado;
+* erros.
+
+---
+
+# 21. Teste de conexão
+
+Cada API de entrada deve possuir uma operação de teste.
+
+Exemplo:
+
+```text
+Google Flights
+
+API Key:
+**************
+
+[ TESTAR CONEXÃO ]
+```
+
+Possíveis resultados:
+
+```text
+✓ API conectada
+```
+
+ou:
+
+```text
+✗ Falha na autenticação
+```
+
+ou:
+
+```text
+✗ Timeout
+```
+
+ou:
+
+```text
+✗ Endpoint indisponível
+```
+
+Esses eventos também devem ser enviados para `log.py`.
+
+---
+
+# 22. `buscador.py`
+
+`buscador.py` é o **núcleo operacional do FlyScanner**.
+
+É o robô.
+
+Ele deve:
+
+1. receber as configurações da interface;
+2. identificar APIs de entrada habilitadas;
+3. obter as condições;
+4. obter os outputs habilitados;
+5. iniciar o ciclo de consulta;
+6. consultar as APIs;
+7. receber resultados;
+8. enviar resultados para o filtro;
+9. verificar resultados aprovados;
+10. eliminar duplicações;
+11. enviar resultados para os outputs;
+12. registrar absolutamente tudo no sistema de logs.
+
+---
+
+# 23. Fluxo operacional completo
+
+Quando o usuário clicar:
+
+```text
+[ RODAR ROBÔ ]
+```
+
+o fluxo deverá ser:
+
+```text
+INTERFACE
+   │
+   ├── APIs configuradas
+   ├── Condições
+   └── Outputs
+          │
+          ▼
+     BUSCADOR.PY
+          │
+          ▼
+     APIS.PY
+          │
+          ▼
+    API DE ENTRADA
+          │
+          ▼
+    Dados encontrados
+          │
+          ▼
+     CONDICOES.PY
+          │
+      ┌───┴────┐
+      │        │
+   REJEITA   APROVA
+      │        │
+      │        ▼
+      │    DEDUPLICAÇÃO
+      │        │
+      │        ▼
+      │     OUTPUT
+      │
+      ▼
+     LOG
+```
+
+---
+
+# 24. Ciclo de consulta
+
+O robô não deve executar uma única consulta e terminar.
+
+Ele deverá trabalhar em ciclo.
+
+Exemplo:
+
+```text
+INICIAR
+   ↓
+Consultar API
+   ↓
+Receber resultados
+   ↓
+Filtrar
+   ↓
+Enviar resultados novos
+   ↓
+Registrar logs
+   ↓
+Aguardar intervalo
+   ↓
+Consultar novamente
+   ↓
+...
+```
+
+O intervalo de consulta deverá ser configurável por API ou globalmente, conforme a implementação futura.
+
+---
+
+# 25. Detecção de mudança de preço
+
+Esse é um dos conceitos centrais do FlyScanner.
+
+O sistema não deve simplesmente mandar repetidamente a mesma passagem a cada consulta.
+
+Exemplo:
+
+Primeira consulta:
+
+```text
+GIG → LIS
+R$ 3.200
+```
+
+Resultado aprovado.
+
+O sistema registra esse estado.
+
+Segunda consulta:
+
+```text
+GIG → LIS
+R$ 3.200
+```
+
+Nenhuma mudança.
+
+Por padrão:
+
+```text
+não enviar novamente
+```
+
+Terceira consulta:
+
+```text
+GIG → LIS
+R$ 2.950
+```
+
+O preço mudou.
+
+Então:
+
+```text
+OUTPUT
+↓
+Nova passagem/preço detectado
+GIG → LIS
+R$ 2.950
+```
+
+---
+
+# 26. Estado anterior
+
+O buscador deverá manter um estado das passagens observadas.
+
+Exemplo conceitual:
+
+```python
+{
+    "GIG-LIS-2026-12-10-2026-12-20": {
+        "price": 3200,
+        "last_seen": "..."
+    }
+}
+```
+
+Na nova consulta:
+
+```text
+Preço anterior: 3200
+Preço atual: 2950
+```
+
+Logo:
+
+```text
+MUDANÇA DETECTADA
+```
+
+---
+
+# 27. Primeira execução
+
+Deve existir uma regra clara para a primeira consulta.
+
+Quando uma passagem é encontrada pela primeira vez:
+
+```text
+não existe estado anterior
+```
+
+O sistema pode considerá-la:
+
+```text
+NOVA
+```
+
+e enviá-la ao output.
+
+Depois:
+
+```text
+estado atual = preço observado
+```
+
+Isso permite que o usuário receba imediatamente oportunidades encontradas.
+
+---
+
+# 28. Duplicação
+
+O sistema deve diferenciar:
+
+```text
+mesmo voo
+```
+
+de:
+
+```text
+mesmo preço
+```
+
+Uma chave de identificação pode considerar:
+
+```text
+origem
+destino
+data de ida
+data de volta
+companhia
+voo
+```
+
+Dependendo da quantidade de informações fornecidas pela API.
+
+Exemplo:
+
+```text
+GIG
+LIS
+2026-12-10
+2026-12-20
+LATAM
+```
+
+forma uma identidade de viagem.
+
+A URL, preço ou horário podem mudar sem necessariamente representar uma nova viagem.
+
+---
+
+# 29. `condicoes.py`
+
+Responsabilidades:
+
+* representar condições;
+* validar condições;
+* salvar condições;
+* carregar condições;
+* aplicar filtros;
+* determinar se um voo satisfaz os critérios.
+
+Exemplo conceitual:
+
+```python
+def matches(flight, conditions):
+    ...
+```
+
+Resultado:
+
+```python
+True
+```
+
+ou:
+
+```python
+False
+```
+
+---
+
+# 30. Regra de filtros vazios
+
+Campo vazio:
+
+```text
+não filtra.
+```
+
+Exemplo:
+
+```text
+Origem = GIG
+Destino = vazio
+Preço máximo = vazio
+```
+
+Somente:
+
+```text
+origem == GIG
+```
+
+é considerado.
+
+Isso é obrigatório para preservar a característica de busca ampla.
+
+---
+
+# 31. `log.py`
+
+`log.py` é responsável pelo sistema de logs.
+
+A segunda janela da aplicação será dedicada exclusivamente a isso.
+
+O princípio do log é:
+
+> **Tudo que acontece dentro do robô deve ser observável.**
+
+Não deve haver ações importantes ocorrendo silenciosamente.
+
+---
+
+# 32. Janela 2 — Log
+
+A janela será denominada:
+
+**Log**
+
+Exemplo visual:
+
+```text
+┌───────────────────────────────────────────────┐
+│ FLYSCANNER — LOG                              │
+├───────────────────────────────────────────────┤
+│ [11:20:01] Sistema iniciado                  │
+│ [11:20:03] Google Flights carregado           │
+│ [11:20:04] Configuração validada             │
+│ [11:20:05] API conectada                      │
+│ [11:20:06] Consulta iniciada                  │
+│ [11:20:08] 34 resultados recebidos            │
+│ [11:20:08] 29 resultados rejeitados           │
+│ [11:20:08] 5 resultados aprovados             │
+│ [11:20:08] Novo voo detectado                 │
+│ [11:20:08] GIG → LIS — R$ 2.890              │
+│ [11:20:09] Resultado enviado para Terminal    │
+│ [11:20:09] Consulta finalizada                │
+│ [11:20:10] Próxima consulta em 30 minutos     │
+└───────────────────────────────────────────────┘
+```
+
+---
+
+# 33. Eventos que devem gerar log
+
+Praticamente todos os eventos relevantes.
+
+### Sistema
+
+```text
+Aplicação iniciada
+Aplicação encerrada
+Robô iniciado
+Robô parado
+Configuração carregada
+Configuração salva
+```
+
+### APIs
+
+```text
+API carregada
+API não encontrada
+API indisponível
+API conectada
+Falha de autenticação
+Token inválido
+API Key inválida
+Timeout
+Erro HTTP
+Erro de parsing
+Resposta inválida
+```
+
+### Consultas
+
+```text
+Consulta iniciada
+Consulta finalizada
+Tempo da consulta
+Quantidade de resultados
+Consulta vazia
+Consulta atrasada
+Consulta interrompida
+```
+
+### Condições
+
+```text
+Condições carregadas
+Resultado aprovado
+Resultado rejeitado
+Motivo da rejeição
+```
+
+### Passagens
+
+```text
+Nova passagem
+Mudança de preço
+Preço aumentado
+Preço reduzido
+Passagem duplicada
+Passagem enviada
+```
+
+### Outputs
+
+```text
+Output iniciado
+Output indisponível
+Falha no envio
+Envio concluído
+Telegram conectado
+Terminal conectado
+```
+
+---
+
+# 34. Níveis de log
+
+O sistema deve trabalhar com níveis.
+
+```text
+DEBUG
+INFO
+WARNING
+ERROR
+CRITICAL
+```
+
+Exemplo:
+
+```text
+[INFO] Consulta iniciada
+[DEBUG] URL consultada: ...
+[INFO] 52 resultados encontrados
+[WARNING] API demorou 15 segundos
+[ERROR] Falha de autenticação
+[CRITICAL] Nenhuma API de entrada disponível
+```
+
+Na interface, o usuário poderá futuramente filtrar os níveis.
+
+---
+
+# 35. Interface gráfica
+
+A interface será construída utilizando:
+
+```python
+CustomTkinter
+```
+
+A aplicação deve ter aparência moderna, limpa e funcional.
+
+A interface não deve concentrar lógica de negócio.
+
+Arquitetura:
+
+```text
+interface.py
+     │
+     ├── coleta configurações
+     │
+     ├── mostra informações
+     │
+     └── controla execução
+              │
+              ▼
+          buscador.py
+```
+
+---
+
+# 36. Organização visual
+
+A primeira janela deve possuir uma estrutura aproximadamente:
+
+```text
+┌──────────────────────────────────────────────────────┐
+│                    FLYSCANNER                        │
+├──────────────────────────────────────────────────────┤
+│                                                      │
+│  1. APIs DE ENTRADA                                  │
+│                                                      │
+│  API: [ Google Flights ▼ ]                           │
+│                                                      │
+│  [Configurações da API]                              │
+│                                                      │
+├──────────────────────────────────────────────────────┤
+│                                                      │
+│  2. CONDIÇÕES                                        │
+│                                                      │
+│  Origem:       [________________]                    │
+│  Destino:      [________________]                    │
+│  Tipo:         [Ida e volta ▼]                       │
+│  Mês:          [Dezembro ▼]                          │
+│  Ano:          [2026 ▼]                              │
+│  Preço mínimo: [________]                            │
+│  Preço máximo: [________]                            │
+│                                                      │
+│                         [ SALVAR CONDIÇÕES ]          │
+│                                                      │
+├──────────────────────────────────────────────────────┤
+│                                                      │
+│  3. RETORNO                                          │
+│                                                      │
+│  ☑ Terminal                                          │
+│  ☐ Telegram                                          │
+│  ☐ WhatsApp                                         │
+│                                                      │
+├──────────────────────────────────────────────────────┤
+│                                                      │
+│       [ ▶ RODAR ROBÔ ]     [ ■ PARAR ROBÔ ]          │
+│                                                      │
+│       Status: PARADO                                 │
+│                                                      │
+└──────────────────────────────────────────────────────┘
+```
+
+---
+
+# 37. Estado do robô
+
+A interface deve sempre informar o estado atual.
+
+Estados mínimos:
+
+```text
+PARADO
+INICIANDO
+CONECTANDO
+CONSULTANDO
+AGUARDANDO
+ERRO
+FINALIZANDO
+```
+
+Exemplo:
+
+```text
+Status: CONSULTANDO GOOGLE FLIGHTS
+```
+
+Depois:
+
+```text
+Status: AGUARDANDO PRÓXIMA CONSULTA
+```
+
+---
+
+# 38. Execução em segundo plano
+
+O botão:
+
+```text
+RODAR ROBÔ
+```
+
+não pode congelar a interface.
+
+O buscador deverá executar em uma thread/processo apropriado.
+
+Conceitualmente:
+
+```text
+THREAD DA INTERFACE
+        │
+        ├── mantém janela responsiva
+        │
+        ▼
+THREAD DO BUSCADOR
+        │
+        ├── consulta API
+        ├── filtra
+        ├── envia
+        └── registra logs
+```
+
+A interface nunca deve ficar travada enquanto uma API estiver esperando resposta.
+
+---
+
+# 39. Comunicação entre threads
+
+O buscador não deve manipular diretamente widgets do CustomTkinter.
+
+Errado:
+
+```python
+label.configure(text="Consulta concluída")
+```
+
+dentro da thread do buscador.
+
+O buscador deve emitir um evento/log:
+
+```python
+logger.info("Consulta concluída")
+```
+
+e a interface receber essa informação de forma segura.
+
+---
+
+# 40. Comunicação entre módulos
+
+A arquitetura deve ser baseada em fluxo de dados.
+
+```text
+INTERFACE
+    ↓
+CONFIGURAÇÃO
+    ↓
+BUSCADOR
+    ↓
+APIS
+    ↓
+RESULTADO NORMALIZADO
+    ↓
+CONDIÇÕES
+    ↓
+RESULTADOS APROVADOS
+    ↓
+OUTPUTS
+    ↓
+LOG
+```
+
+Nenhum módulo deve depender diretamente da implementação interna de outro.
+
+---
+
+# 41. Regras para adicionar uma nova API de entrada
+
+Para adicionar:
+
+```text
+Skyscanner
+```
+
+deve-se criar:
+
+```text
+C:\Scripts\flyscanner\apis_input\skyscanner.py
+```
+
+O arquivo deverá implementar o contrato de API definido pelo projeto.
+
+Depois:
+
+```text
+Executar FlyScanner
+```
+
+O sistema deverá detectar:
+
+```text
+skyscanner.py
+```
+
+e apresentar:
+
+```text
+Skyscanner
+```
+
+na seção:
+
+```text
+APIs DE ENTRADA
+```
+
+Não deverá ser necessário editar:
+
+```text
+interface.py
+```
+
+para adicionar a opção manualmente.
+
+---
+
+# 42. Regras para adicionar novo Output
+
+Para adicionar Telegram:
+
+```text
+C:\Scripts\flyscanner\apis_output\telegram.py
+```
+
+O sistema detecta o arquivo.
+
+A interface apresenta:
+
+```text
+☐ Telegram
+```
+
+Ao selecionar Telegram, a interface deve carregar os campos exigidos pelo módulo.
+
+Exemplo:
+
+```text
+Bot Token:
+[________________________]
+
+Chat ID:
+[________________________]
+
+[ TESTAR TELEGRAM ]
+```
+
+---
+
+# 43. Não criar código específico no `interface.py`
+
+Evitar:
+
+```python
+if api == "telegram":
+    ...
+elif api == "whatsapp":
+    ...
+elif api == "discord":
+    ...
+```
+
+Esse modelo destruiria a modularidade do projeto.
+
+O correto é:
+
+```text
+interface
+    ↓
+descobre módulos
+    ↓
+módulo declara configuração
+    ↓
+interface monta formulário
+```
+
+O mesmo princípio vale para APIs de entrada.
+
+---
+
+# 44. `apis.py` como camada intermediária
+
+O `apis.py` existe justamente para evitar que:
+
+```text
+buscador.py
+```
+
+precise conhecer:
+
+```text
+google_flight.py
+skyscanner.py
+decolar.py
+...
+```
+
+e também para evitar que:
+
+```text
+interface.py
+```
+
+precise conhecer a implementação dessas APIs.
+
+O relacionamento deverá ser:
+
+```text
+interface
+     ↓
+apis.py
+     ↓
+api específica
+```
+
+---
+
+# 45. Tratamento de erros
+
+Nenhum erro de API deve derrubar o robô inteiro sem necessidade.
+
+Exemplo:
+
+```text
+Google Flights
+      ↓
+Timeout
+```
+
+O sistema deve:
+
+```text
+registrar erro
+↓
+informar log
+↓
+aguardar
+↓
+tentar novamente
+```
+
+Não:
+
+```text
+crash
+↓
+fechar FlyScanner
+```
+
+Erros fatais devem ser tratados separadamente.
+
+---
+
+# 46. Falha de uma API
+
+Se futuramente houver:
+
+```text
+Google Flights
+Skyscanner
+Decolar
+```
+
+e o Skyscanner falhar:
+
+```text
+Google Flights → funcionando
+Skyscanner → ERROR
+Decolar → funcionando
+```
+
+O sistema não deverá necessariamente interromper as demais fontes.
+
+O erro deverá aparecer no log:
+
+```text
+[ERROR] Skyscanner indisponível
+```
+
+enquanto as outras continuam funcionando.
+
+---
+
+# 47. Múltiplas APIs de entrada
+
+Futuramente o usuário poderá ativar:
+
+```text
+☑ Google Flights
+☑ Skyscanner
+☑ Decolar
+```
+
+O buscador deverá consultar todas as fontes habilitadas.
+
+Os resultados devem passar pelo mesmo pipeline:
+
+```text
+Google Flights ─┐
+Skyscanner ─────┼──→ NORMALIZAÇÃO → CONDIÇÕES
+Decolar ────────┘
+```
+
+Isso permite comparar resultados provenientes de fontes diferentes.
+
+---
+
+# 48. Múltiplos Outputs
+
+Da mesma forma:
+
+```text
+☑ Terminal
+☑ Telegram
+☑ Email
+```
+
+Um resultado aprovado poderá ser enviado para todos os outputs ativos.
+
+Fluxo:
+
+```text
+Resultado aprovado
+       │
+       ├──→ Terminal
+       ├──→ Telegram
+       └──→ Email
+```
+
+Um erro em um output não deve necessariamente impedir os demais.
+
+---
+
+# 49. Regra de independência
+
+Cada módulo deve falhar isoladamente sempre que possível.
+
+Exemplo:
+
+```text
+Telegram ERROR
+```
+
+não deve causar:
+
+```text
+Terminal ERROR
+```
+
+nem:
+
+```text
+Buscador ERROR
+```
+
+A exceção deve ser registrada.
+
+---
+
+# 50. Segurança
+
+Credenciais nunca devem aparecer integralmente no log.
+
+Errado:
+
+```text
+[INFO] Token: 123456789ABC
+```
+
+Correto:
+
+```text
+[INFO] Token configurado: ********ABC
+```
+
+Da mesma forma, API Keys devem ser mascaradas.
+
+---
+
+# 51. Configurações
+
+A aplicação deverá separar:
+
+### Código
+
+```text
+.py
+```
+
+### Configuração
+
+```text
+dados/configuração local
+```
+
+### Estado
+
+```text
+preços observados
+últimas consultas
+etc.
+```
+
+### Logs
+
+```text
+eventos da aplicação
+```
+
+Mesmo que a primeira versão seja extremamente simples, essa separação deve ser mantida conceitualmente.
+
+---
+
+# 52. Persistência
+
+A primeira versão pode utilizar arquivos locais simples.
+
+Exemplo:
+
+```text
+config.json
+```
+
+ou estrutura equivalente.
+
+O objetivo é permitir:
+
+```text
+abrir FlyScanner
+↓
+configurações continuam disponíveis
+```
+
+sem exigir que o usuário configure tudo novamente.
+
+---
+
+# 53. Configuração x estado
+
+São conceitos diferentes.
+
+### Configuração
+
+O usuário definiu:
+
+```text
+Origem = GIG
+Destino = LIS
+Preço máximo = 3000
+```
+
+### Estado
+
+O robô descobriu:
+
+```text
+Último preço observado = R$ 2.950
+Última consulta = 11:20
+```
+
+Não misturar esses dois conceitos.
+
+---
+
+# 54. Fluxo ao iniciar aplicação
+
+Ao abrir:
+
+```text
+interface.py
+```
+
+o sistema deverá:
+
+```text
+1. Iniciar aplicação
+2. Inicializar logger
+3. Procurar APIs de entrada
+4. Procurar APIs de saída
+5. Carregar configurações
+6. Carregar condições
+7. Montar interface
+8. Mostrar status PARADO
+```
+
+---
+
+# 55. Fluxo ao clicar em "Rodar Robô"
+
+```text
+Usuário
+  ↓
+RODAR ROBÔ
+  ↓
+validar configuração
+  ↓
+existem APIs?
+  ↓
+SIM
+  ↓
+existe output?
+  ↓
+SIM
+  ↓
+carregar condições
+  ↓
+iniciar buscador
+  ↓
+testar APIs
+  ↓
+iniciar consultas
+```
+
+Caso falhe:
+
+```text
+configuração inválida
+        ↓
+não iniciar robô
+        ↓
+mostrar erro
+        ↓
+registrar log
+```
+
+---
+
+# 56. Fluxo de uma consulta
+
+```text
+[INÍCIO DA CONSULTA]
+
+        ↓
+
+Selecionar API
+
+        ↓
+
+Executar consulta
+
+        ↓
+
+Receber resposta
+
+        ↓
+
+Validar resposta
+
+        ↓
+
+Normalizar dados
+
+        ↓
+
+Aplicar condições
+
+        ↓
+
+Resultado corresponde?
+
+     ┌──────┴──────┐
+     │             │
+    NÃO           SIM
+     │             │
+     ▼             ▼
+    LOG       verificar estado
+                   │
+                   ▼
+             é resultado novo?
+                   │
+             ┌─────┴─────┐
+             │           │
+            NÃO         SIM
+             │           │
+             ▼           ▼
+            LOG      enviar output
+                         │
+                         ▼
+                        LOG
+
+        ↓
+
+finalizar consulta
+
+        ↓
+
+aguardar próximo ciclo
+```
+
+---
+
+# 57. Mudança de preço
+
+Quando uma passagem já conhecida sofrer alteração:
+
+```text
+Preço anterior: R$ 3.200
+Preço atual:    R$ 2.850
+```
+
+o sistema deverá registrar:
+
+```text
+[INFO] Mudança de preço detectada
+[INFO] GIG → LIS
+[INFO] Anterior: R$ 3.200
+[INFO] Atual: R$ 2.850
+[INFO] Variação: -R$ 350
+```
+
+e enviar o resultado ao output.
+
+---
+
+# 58. Aumento de preço
+
+Também deve ser possível registrar:
+
+```text
+R$ 2.850 → R$ 3.100
+```
+
+Mesmo que o preço tenha piorado, trata-se de uma mudança.
+
+A decisão sobre **quais mudanças devem gerar alerta** deverá ficar configurável no futuro.
+
+Exemplo futuro:
+
+```text
+☑ Avisar somente redução de preço
+☐ Avisar qualquer alteração
+```
+
+---
+
+# 59. Evolução futura dos filtros
+
+A arquitetura deve permitir futuramente:
+
+```text
+Número máximo de escalas
+Companhia aérea
+Aeroporto
+Bagagem
+Horário mínimo
+Horário máximo
+Duração máxima
+Duração mínima
+Classe
+Aeroporto de conexão
+Quantidade de passageiros
+Dias de permanência
+Flexibilidade de datas
+```
+
+Esses campos não devem ser implementados prematuramente.
+
+A primeira versão deve permanecer simples.
+
+---
+
+# 60. Evolução futura dos Outputs
+
+A arquitetura permite adicionar:
+
+```text
+terminal.py
+telegram.py
+whatsapp.py
+email.py
+discord.py
+web.py
+blog.py
+```
+
+Cada módulo deverá possuir sua própria implementação.
+
+O restante do sistema não deve precisar conhecer detalhes do serviço.
+
+---
+
+# 61. Terminal como primeiro Output
+
+Na versão inicial, o terminal/output será implementado dentro da própria interface.
+
+Exemplo:
+
+```text
+┌─────────────────────────────────────────────┐
+│ RESULTADOS                                  │
+├─────────────────────────────────────────────┤
+│                                             │
+│ [11:32] NOVO VOO                            │
+│                                             │
+│ Rio de Janeiro (GIG)                        │
+│ → Lisboa (LIS)                              │
+│                                             │
+│ Ida: 10/12/2026                             │
+│ Volta: 20/12/2026                           │
+│ Preço: R$ 2.890                             │
+│ Fonte: Google Flights                       │
+│                                             │
+└─────────────────────────────────────────────┘
+```
+
+Esse output deve ser tratado como um módulo.
+
+Futuramente poderá ser substituído/complementado por Telegram etc.
+
+---
+
+# 62. Diferença entre Log e Output
+
+São conceitos diferentes.
+
+### Output
+
+É destinado ao usuário final.
+
+Exemplo:
+
+```text
+GIG → LIS
+R$ 2.890
+```
+
+### Log
+
+É destinado ao diagnóstico e acompanhamento do sistema.
+
+Exemplo:
+
+```text
+[11:32:04] API respondeu em 2.31s
+[11:32:04] 47 resultados recebidos
+[11:32:04] 41 resultados rejeitados
+[11:32:04] 6 resultados aprovados
+[11:32:04] 1 mudança de preço detectada
+```
+
+Uma passagem pode aparecer nos dois, mas com finalidades diferentes.
+
+---
+
+# 63. Regras de manutenção
+
+Ao modificar o projeto:
+
+### Se alterar interface
+
+Modificar:
+
+```text
+interface.py
+```
+
+Não colocar lógica de consulta ali.
+
+### Se alterar filtro
+
+Modificar:
+
+```text
+condicoes.py
+```
+
+### Se alterar mecanismo de consulta
+
+Modificar:
+
+```text
+buscador.py
+```
+
+ou a API específica.
+
+### Se adicionar uma nova API
+
+Criar:
+
+```text
+apis_input/nova_api.py
+```
+
+### Se adicionar um novo output
+
+Criar:
+
+```text
+apis_output/novo_output.py
+```
+
+### Se alterar sistema de logs
+
+Modificar:
+
+```text
+log.py
+```
+
+### Se alterar descoberta/conexão entre APIs
+
+Modificar:
+
+```text
+apis.py
+```
+
+---
+
+# 64. Regra fundamental de arquitetura
+
+Não resolver um problema de um módulo dentro de outro módulo.
+
+Exemplo:
+
+Se Telegram possui um problema:
+
+```text
+NÃO corrigir colocando código Telegram em buscador.py.
+```
+
+Corrigir:
+
+```text
+apis_output/telegram.py
+```
+
+Se o problema é filtragem:
+
+```text
+condicoes.py
+```
+
+Se o problema é descoberta dos módulos:
+
+```text
+apis.py
+```
+
+Essa disciplina é essencial para manter o projeto pequeno mesmo quando crescer.
+
+---
+
+# 65. Consulta das pastas
+
+A aplicação deverá tratar as pastas como sistemas de plugins.
+
+## Entrada
+
+```text
+C:\Scripts\flyscanner\apis_input
+```
+
+## Saída
+
+```text
+C:\Scripts\flyscanner\apis_output
+```
+
+Ao inicializar:
+
+```text
+Scan apis_input
+        ↓
+Encontrar *.py
+        ↓
+Carregar módulos válidos
+```
+
+e:
+
+```text
+Scan apis_output
+        ↓
+Encontrar *.py
+        ↓
+Carregar módulos válidos
+```
+
+O sistema deverá registrar no log:
+
+```text
+[INFO] Procurando APIs de entrada...
+[INFO] 3 APIs encontradas
+[INFO] Google Flights carregado
+[INFO] Skyscanner carregado
+[INFO] Decolar carregado
+```
+
+---
+
+# 66. API inválida
+
+Se existir:
+
+```text
+apis_input/teste.py
+```
+
+mas o arquivo não implementar o contrato esperado:
+
+```text
+[WARNING] Módulo teste.py ignorado: contrato inválido
+```
+
+O programa não deve necessariamente fechar.
+
+Isso permite que arquivos experimentais existam sem quebrar a aplicação inteira.
+
+---
+
+# 67. Convenção de nomes
+
+Arquivos:
+
+```text
+snake_case.py
+```
+
+Exemplos:
+
+```text
+google_flight.py
+skyscanner.py
+decolar.py
+telegram.py
+whatsapp.py
+```
+
+Evitar:
+
+```text
+GoogleFlight.py
+Google Flights.py
+google-flight.py
+```
+
+---
+
+# 68. Princípio de baixo acoplamento
+
+O projeto deve manter baixo acoplamento.
+
+Exemplo:
+
+```text
+Google Flights
+```
+
+não deve saber que existe:
+
+```text
+Telegram
+```
+
+Telegram não deve saber que existe:
+
+```text
+Skyscanner
+```
+
+E Skyscanner não deve saber como:
+
+```text
+condicoes.py
+```
+
+funciona internamente.
+
+Todos se comunicam através dos contratos definidos pelo sistema.
+
+---
+
+# 69. Princípio de alta coesão
+
+Cada módulo deve fazer uma coisa.
+
+```text
+interface.py
+→ interface
+
+buscador.py
+→ execução do robô
+
+apis.py
+→ gerenciamento das integrações
+
+condicoes.py
+→ filtragem
+
+log.py
+→ observabilidade
+
+apis_input/*
+→ consulta de fontes
+
+apis_output/*
+→ entrega de resultados
+```
+
+---
+
+# 70. Primeira versão — MVP
+
+A primeira versão não deve tentar implementar tudo.
+
+### Implementar:
+
+```text
+✓ CustomTkinter
+✓ Janela Buscar Passagens
+✓ Janela Log
+✓ Descoberta automática de APIs
+✓ Google Flights
+✓ Configuração da API
+✓ Condições
+✓ Salvar condições
+✓ Output Terminal
+✓ Botão Rodar
+✓ Botão Parar
+✓ Thread do buscador
+✓ Sistema de logs
+✓ Tratamento básico de erros
+✓ Consulta recorrente
+✓ Detecção básica de novos resultados
+✓ Detecção básica de alteração de preço
+```
+
+### Não implementar ainda:
+
+```text
+✗ Telegram
+✗ WhatsApp
+✗ Email
+✗ Web
+✗ Banco de dados complexo
+✗ Sistema de usuários
+✗ Login
+✗ Cloud
+✗ Dashboard web
+✗ Machine Learning
+✗ IA desnecessária
+```
+
+O objetivo inicial é provar o pipeline.
+
+---
+
+# 71. Pipeline mínimo funcional
+
+O MVP deverá conseguir fazer:
+
+```text
+Usuário abre FlyScanner
+        ↓
+Configura Google Flights
+        ↓
+Configura:
+GIG → LIS
+Dezembro/2026
+Ida e volta
+Até R$ 3.000
+        ↓
+Seleciona Terminal
+        ↓
+RODAR ROBÔ
+        ↓
+Buscador consulta API
+        ↓
+Recebe resultados
+        ↓
+Normaliza
+        ↓
+Condicoes.py filtra
+        ↓
+Encontra:
+GIG → LIS
+R$ 2.890
+        ↓
+Terminal recebe
+        ↓
+Log registra tudo
+        ↓
+Aguarda
+        ↓
+Consulta novamente
+```
+
+Esse é o **caminho crítico do projeto**.
+
+---
+
+# 72. Arquitetura conceitual definitiva
+
+O FlyScanner deve evoluir mantendo esta estrutura:
+
+```text
+                         ┌──────────────┐
+                         │   INTERFACE  │
+                         │ interface.py │
+                         └──────┬───────┘
+                                │
+                ┌───────────────┼───────────────┐
+                │               │               │
+                ▼               ▼               ▼
+             INPUTS         CONDIÇÕES        OUTPUTS
+                │               │               │
+                ▼               ▼               ▼
+             apis.py       condicoes.py    apis.py
+                │                               │
+        ┌───────┼────────┐              ┌───────┼───────┐
+        ▼       ▼        ▼              ▼       ▼       ▼
+     Google  Sky...   Decolar       Terminal Telegram WhatsApp
+        │       │        │              │       │       │
+        └───────┴────────┘              └───────┴───────┘
+                │                               │
+                └──────────────┬────────────────┘
+                               │
+                               ▼
+                         buscador.py
+                               │
+                               ▼
+                            log.py
+                               │
+                               ▼
+                         JANELA DE LOG
+```
+
+---
+
+# 73. Regra de ouro para futuras implementações
+
+Antes de adicionar qualquer funcionalidade, responder:
+
+### 1. Isso é interface?
+
+→ `interface.py`
+
+### 2. Isso é execução do robô?
+
+→ `buscador.py`
+
+### 3. Isso é gerenciamento de integração?
+
+→ `apis.py`
+
+### 4. Isso é filtro/condição?
+
+→ `condicoes.py`
+
+### 5. Isso é log?
+
+→ `log.py`
+
+### 6. É uma nova fonte de passagens?
+
+→ `apis_input/nova_api.py`
+
+### 7. É um novo canal de saída?
+
+→ `apis_output/novo_output.py`
+
+Se uma funcionalidade não se encaixa claramente em nenhum desses pontos, **não criar código aleatoriamente**. Primeiro definir a responsabilidade arquitetural.
+
+---
+
+# 74. Filosofia do projeto
+
+O FlyScanner não deve ser projetado como um sistema gigantesco.
+
+A filosofia é:
+
+```text
+SIMPLES
++
+MODULAR
++
+OBSERVÁVEL
++
+EXTENSÍVEL
+```
+
+O projeto é pessoal e será mantido pelo próprio desenvolvedor.
+
+Portanto, não há necessidade inicial de:
+
+```text
+microserviços
+Docker
+Kubernetes
+Redis
+RabbitMQ
+PostgreSQL
+AWS
+arquitetura distribuída
+```
+
+A menos que uma necessidade concreta apareça posteriormente.
+
+A complexidade deve ser introduzida **somente quando resolver um problema real**.
+
+---
+
+# 75. Regra para evolução
+
+A evolução esperada é:
+
+```text
+VERSÃO 1
+Google Flights
++
+Condições
++
+Terminal
++
+Logs
+```
+
+↓
+
+```text
+VERSÃO 2
++ Skyscanner
++ Decolar
++ comparação entre fontes
+```
+
+↓
+
+```text
+VERSÃO 3
++ Telegram
++ Email
+```
+
+↓
+
+```text
+VERSÃO 4
++ Web
++ Dashboard
+```
+
+↓
+
+```text
+VERSÃO 5
++ histórico de preços
++ estatísticas
++ gráficos
+```
+
+↓
+
+```text
+VERSÃO FUTURA
++ inteligência sobre preços
++ identificação de oportunidades
++ automações avançadas
+```
+
+A estrutura original deve continuar sendo preservada mesmo com a evolução.
+
+---
+
+# 76. Definição resumida dos componentes
+
+| Componente         | Responsabilidade                                |
+| ------------------ | ----------------------------------------------- |
+| `interface.py`     | Interface gráfica e interação com usuário       |
+| `buscador.py`      | Motor/robô de execução                          |
+| `apis.py`          | Gerenciamento e conexão das integrações         |
+| `condicoes.py`     | Modelo, persistência e aplicação dos filtros    |
+| `log.py`           | Sistema de logs e comunicação com janela de log |
+| `apis_input/*.py`  | Fontes de dados de passagens                    |
+| `apis_output/*.py` | Canais de entrega dos resultados                |
+
+---
+
+# 77. Regra final
+
+O FlyScanner deve sempre preservar este fluxo:
+
+```text
+CONFIGURAR
+    ↓
+CONSULTAR
+    ↓
+NORMALIZAR
+    ↓
+FILTRAR
+    ↓
+COMPARAR
+    ↓
+DECIDIR SE É NOVO/ALTERADO
+    ↓
+ENVIAR
+    ↓
+REGISTRAR
+    ↓
+REPETIR
+```
+
+A interface é apenas a camada de controle.
+
+O `buscador.py` é o cérebro operacional.
+
+As APIs de entrada são os sensores.
+
+`condicoes.py` é o filtro.
+
+As APIs de saída são os canais de comunicação.
+
+`log.py` é a observabilidade do sistema.
+
+`apis.py` é a camada que mantém as integrações desacopladas do restante da aplicação.
+
+Essa separação deve ser preservada em todas as versões futuras do FlyScanner.
